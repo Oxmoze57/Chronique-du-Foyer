@@ -71,3 +71,11 @@ Toujours exporter les données depuis l'application avant de remplacer une versi
 
 ## v6.6 — Serment du Royaume
 Le sélecteur de Serment peut désormais ajouter jusqu’à trois idées ménagères sûres issues de la bibliothèque du foyer. Les suggestions respectent le risque maximal, la durée, la difficulté, le logement configuré et évitent de dupliquer une mission ménagère déjà active.
+
+
+## v6.7 — Ascension du Gardien
+- Serment : minimum 3 missions, aucune limite maximale.
+- Suggestions ménagères intégrées au Serment, ajoutables par vagues de 3.
+- Nouveaux fonds locaux mythologiques/shōnen pour Accueil, Rituel et Saga du Bâtisseur.
+- Évolution visuelle du Gardien aux niveaux 1, 10, 20, 30, 40 et 50+.
+- Tous les nouveaux assets sont inclus dans le cache PWA hors ligne.

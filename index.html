@@ -37,7 +37,7 @@
               <small><strong id="xpCurrent">0</strong> / <span id="xpNext">250</span> XP</small>
             </div>
           </div>
-          <div class="level-orb"><small>NIVEAU</small><strong id="level">1</strong><span id="rankMini">Novice</span></div>
+          <div class="hero-guardian-stage"><img id="heroGuardianImage" src="assets/guardian-stage-1.webp" alt="Évolution du Gardien"><div class="level-orb"><small>NIVEAU</small><strong id="level">1</strong><span id="rankMini">Novice</span></div></div>
         </section>
 
         <section class="arc-banner card"><div><p class="eyebrow">Arc actuel</p><h2>La Flamme du Foyer</h2><p>Entretiens ton sanctuaire, tiens ton serment et fais grandir la légende du Gardien.</p></div><span class="arc-mark">炎</span></section>
@@ -46,7 +46,7 @@
           <div class="section-head compact">
             <div>
               <p class="eyebrow">🔥 Serment du jour</p>
-              <h2><span id="oathDone">0</span>/3 engagements tenus</h2>
+              <h2><span id="oathDone">0</span>/<span id="oathTotal">3</span> serments tenus</h2>
             </div>
             <button class="text-link" id="editOathBtn">Choisir</button>
           </div>
@@ -96,7 +96,7 @@
           <div class="section-head"><div><p class="eyebrow">Demain</p><h2>Parchemin des missions</h2></div><button class="small-add" id="addTomorrowBtn">＋</button></div>
           <div id="tomorrowList" class="task-list"></div>
         </section>
-        <section class="card tip-card"><span>🧠</span><div><strong>Règle du Gardien</strong><p>3 missions principales suffisent. Le reste est du bonus, pas une dette.</p></div></section>
+        <section class="card tip-card"><span>🧠</span><div><strong>Règle du Gardien</strong><p>Scelle au minimum 3 serments. Ensuite, ajoute librement autant de missions que tu souhaites pour demain.</p></div></section>
       </section>
 
       <section id="projectsView" class="view">
@@ -110,11 +110,24 @@
 
       <section id="progressView" class="view">
         <section class="profile-card card glow-card progression-visual">
+          <div class="guardian-evolution-current"><img id="guardianEvolutionImage" src="assets/guardian-stage-1.webp" alt="Gardien niveau 1"><div class="guardian-evolution-copy"><small>FORME ACTUELLE</small><strong id="guardianEvolutionName">Débutant</strong><span id="guardianEvolutionDesc">Des vêtements simples. La volonté avant l’armure.</span></div></div>
           <div class="guardian-symbol">🔥</div>
           <p class="eyebrow">Voie du Gardien</p>
           <h2 id="profileRank">Novice</h2>
           <p>Niveau <strong id="profileLevel">1</strong> · <strong id="profileXP">0</strong> XP</p>
           <div class="xp-track large"><span id="profileXpBar"></span></div>
+        </section>
+        <section class="guardian-path card">
+          <div class="section-head"><div><p class="eyebrow">Évolution visuelle</p><h2>L’armure du Gardien</h2></div></div>
+          <p class="muted guardian-path-intro">Ton apparence change avec ton niveau. Chaque palier matérialise les habitudes que tu as réellement construites.</p>
+          <div class="guardian-stage-track" id="guardianStageTrack">
+            <article class="guardian-stage-card" data-min-level="1"><img src="assets/guardian-stage-1.webp" alt="Gardien niveau 1"><strong>Niv. 1</strong><small>Débutant</small></article>
+            <article class="guardian-stage-card" data-min-level="10"><img src="assets/guardian-stage-10.webp" alt="Gardien niveau 10"><strong>Niv. 10</strong><small>Vainqueur</small></article>
+            <article class="guardian-stage-card" data-min-level="20"><img src="assets/guardian-stage-20.webp" alt="Gardien niveau 20"><strong>Niv. 20</strong><small>Protecteur</small></article>
+            <article class="guardian-stage-card" data-min-level="30"><img src="assets/guardian-stage-30.webp" alt="Gardien niveau 30"><strong>Niv. 30</strong><small>Gardien</small></article>
+            <article class="guardian-stage-card" data-min-level="40"><img src="assets/guardian-stage-40.webp" alt="Gardien niveau 40"><strong>Niv. 40</strong><small>Champion</small></article>
+            <article class="guardian-stage-card" data-min-level="50"><img src="assets/guardian-stage-50.webp" alt="Gardien niveau 50"><strong>Niv. 50+</strong><small>Mythe</small></article>
+          </div>
         </section>
         <section class="section-block">
           <div class="section-head"><div><p class="eyebrow">Vertus</p><h2>Ton évolution</h2></div></div>
@@ -193,9 +206,9 @@
 
   <dialog id="oathDialog">
     <div class="dialog-pad">
-      <div class="dialog-head"><div><p class="eyebrow">🔥 Serment</p><h2>Choisis jusqu'à 3 missions</h2></div><button class="icon-btn" id="closeOath">×</button></div>
-      <p class="muted">Ce sont les seules missions que tu te promets vraiment de tenir.</p>
-      <button class="action oath-suggest full" id="suggestOathHousehold"><span>✨</span><div><strong>INSPIRER MON SERMENT</strong><small>Ajouter jusqu’à 3 idées de ménage sûres et adaptées au Royaume</small></div></button>
+      <div class="dialog-head"><div><p class="eyebrow">🔥 Serment</p><h2>Scelle tes Serments</h2></div><button class="icon-btn" id="closeOath">×</button></div>
+      <p class="muted">Minimum obligatoire : 3 serments. Il n’y a aucune limite maximale : choisis ce que tu veux réellement accomplir.</p>
+      <button class="action oath-suggest full" id="suggestOathHousehold"><span>✨</span><div><strong>INSPIRER MON SERMENT</strong><small>Ajouter des idées de ménage sûres et adaptées au Royaume</small></div></button>
       <div id="oathSuggestionStatus" class="oath-suggestion-status" aria-live="polite"></div>
       <div id="oathPicker" class="oath-picker"></div>
       <button class="action primary full" id="saveOath">Sceller mon Serment</button>

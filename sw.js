@@ -1,7 +1,16 @@
-const CACHE='chroniques-v6.6-oath-household';
+const CACHE='chroniques-v6.7-ascension';
 const ASSETS=['./','./index.html','./style.css','./app.js','./icon.svg','./icon-192.png','./icon-512.png','./manifest.webmanifest','./household-library.js','./household-task-library.v1.json','./assets/hero-guardian.webp','./assets/ritual-moon.webp','./assets/campaign-forge.webp','./assets/progression-banner.webp',
   './assets/sigil-pattern.svg',
-  './assets/rune-divider.svg'
+  './assets/rune-divider.svg',
+  './assets/protect-what-matters.webp',
+  './assets/prepare-tomorrow.webp',
+  './assets/builders-saga.webp',
+  './assets/guardian-stage-1.webp',
+  './assets/guardian-stage-10.webp',
+  './assets/guardian-stage-20.webp',
+  './assets/guardian-stage-30.webp',
+  './assets/guardian-stage-40.webp',
+  './assets/guardian-stage-50.webp'
 ];
 self.addEventListener('install',e=>e.waitUntil(caches.open(CACHE).then(c=>c.addAll(ASSETS)).then(()=>self.skipWaiting())));
 self.addEventListener('activate',e=>e.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(k=>k!==CACHE).map(k=>caches.delete(k)))).then(()=>self.clients.claim())));
