@@ -72,13 +72,13 @@
             <div><p class="eyebrow">Aujourd'hui</p><h2>Tableau des missions</h2></div>
             <button class="small-add" id="addTaskBtn" aria-label="Ajouter une mission">＋</button>
           </div>
-          <div class="filter-row" id="pathFilters">
-            <button class="chip active" data-path="all">Toutes</button>
-            <button class="chip" data-path="Entretien">🧹 Entretien</button>
-            <button class="chip" data-path="Cuisine">🍲 Cuisine</button>
-            <button class="chip" data-path="Rangement">📦 Rangement</button>
-            <button class="chip" data-path="Soutien">❤️ Soutien</button>
-            <button class="chip" data-path="Artisanat">🔨 Bricolage</button>
+          <div class="category-gallery" id="pathFilters">
+            <button class="chip category-card active" data-path="all" style="--cat-bg:url('./assets/protect-what-matters.webp')"><span>✦</span><strong>Toutes</strong><small>Le Royaume entier</small></button>
+            <button class="chip category-card" data-path="Entretien" style="--cat-bg:url('./assets/room-salle-de-bain.webp')"><span>🧹</span><strong>Entretien</strong><small>Préserver le sanctuaire</small></button>
+            <button class="chip category-card" data-path="Cuisine" style="--cat-bg:url('./assets/room-cuisine.webp')"><span>🍲</span><strong>Cuisine</strong><small>Nourrir le foyer</small></button>
+            <button class="chip category-card" data-path="Rangement" style="--cat-bg:url('./assets/room-salon.webp')"><span>📦</span><strong>Rangement</strong><small>Repousser le chaos</small></button>
+            <button class="chip category-card" data-path="Soutien" style="--cat-bg:url('./assets/room-chambre-enfant.webp')"><span>❤️</span><strong>Soutien</strong><small>Protéger les tiens</small></button>
+            <button class="chip category-card" data-path="Artisanat" style="--cat-bg:url('./assets/room-cave.webp')"><span>🔨</span><strong>Bricolage</strong><small>Forger et réparer</small></button>
           </div>
           <div id="taskList" class="task-list"></div>
         </section>
@@ -127,11 +127,11 @@
             <article class="guardian-stage-card" data-min-level="30"><img src="./assets/guardian-stage-30.webp" alt="Gardien niveau 30"><strong>Niv. 30</strong><small>Gardien</small></article>
             <article class="guardian-stage-card" data-min-level="40"><img src="./assets/guardian-stage-40.webp" alt="Gardien niveau 40"><strong>Niv. 40</strong><small>Champion</small></article>
             <article class="guardian-stage-card" data-min-level="50"><img src="./assets/guardian-stage-50.webp" alt="Gardien niveau 50"><strong>Niv. 50</strong><small>Héros</small></article>
-            <article class="guardian-stage-card advanced-stage" data-min-level="60"><img src="./assets/guardian-stage-50.webp" alt="Gardien niveau 60"><strong>Niv. 60</strong><small>Bâtisseur</small></article>
-            <article class="guardian-stage-card advanced-stage" data-min-level="70"><img src="./assets/guardian-stage-50.webp" alt="Gardien niveau 70"><strong>Niv. 70</strong><small>Ascendant</small></article>
-            <article class="guardian-stage-card advanced-stage" data-min-level="80"><img src="./assets/guardian-stage-50.webp" alt="Gardien niveau 80"><strong>Niv. 80</strong><small>Légendaire</small></article>
-            <article class="guardian-stage-card advanced-stage" data-min-level="90"><img src="./assets/guardian-stage-50.webp" alt="Gardien niveau 90"><strong>Niv. 90</strong><small>Demi-Dieu</small></article>
-            <article class="guardian-stage-card advanced-stage eternal-stage" data-min-level="100"><img src="./assets/guardian-stage-50.webp" alt="Gardien niveau 100"><strong>Niv. 100</strong><small>Éternel</small></article>
+            <article class="guardian-stage-card advanced-stage" data-min-level="60"><img src="./assets/guardian-stage-60.webp" alt="Gardien niveau 60"><strong>Niv. 60</strong><small>Bâtisseur</small></article>
+            <article class="guardian-stage-card advanced-stage" data-min-level="70"><img src="./assets/guardian-stage-70.webp" alt="Gardien niveau 70"><strong>Niv. 70</strong><small>Ascendant</small></article>
+            <article class="guardian-stage-card advanced-stage" data-min-level="80"><img src="./assets/guardian-stage-80.webp" alt="Gardien niveau 80"><strong>Niv. 80</strong><small>Légendaire</small></article>
+            <article class="guardian-stage-card advanced-stage" data-min-level="90"><img src="./assets/guardian-stage-90.webp" alt="Gardien niveau 90"><strong>Niv. 90</strong><small>Demi-Dieu</small></article>
+            <article class="guardian-stage-card advanced-stage eternal-stage" data-min-level="100"><img src="./assets/guardian-stage-100.webp" alt="Gardien niveau 100"><strong>Niv. 100</strong><small>Éternel</small></article>
           </div>
         </section>
         <section class="heritage-entry card">

@@ -1,4 +1,4 @@
-const CACHE = 'chroniques-v6.8.1-github-fixed';
+const CACHE = 'chroniques-v6.9-living-world';
 const BASE = new URL('./', self.location.href);
 const asset = path => new URL(path, BASE).href;
 const ASSETS = [
@@ -25,7 +25,20 @@ const ASSETS = [
   "assets/guardian-stage-20.webp",
   "assets/guardian-stage-30.webp",
   "assets/guardian-stage-40.webp",
-  "assets/guardian-stage-50.webp"
+  "assets/guardian-stage-50.webp",
+  "assets/guardian-stage-60.webp",
+  "assets/guardian-stage-70.webp",
+  "assets/guardian-stage-80.webp",
+  "assets/guardian-stage-90.webp",
+  "assets/guardian-stage-100.webp",
+  "assets/room-cuisine.webp",
+  "assets/room-salon.webp",
+  "assets/room-chambre-adulte.webp",
+  "assets/room-chambre-enfant.webp",
+  "assets/room-salle-de-bain.webp",
+  "assets/room-wc.webp",
+  "assets/room-terrasse.webp",
+  "assets/room-cave.webp"
 ].map(asset);
 
 self.addEventListener('install', event => {
