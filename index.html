@@ -136,6 +136,7 @@
         <section class="section-block first-block">
           <div class="section-head"><div><p class="eyebrow">Réglages</p><h2>Ton sanctuaire</h2></div></div>
           <div class="settings-stack">
+            <article class="card kingdom-card"><div><strong>🏯 Royaume configuré</strong><p>1 chambre adulte · 1 chambre enfant · WC · salle de bain · terrasse · salon · cuisine · cave</p><p class="kingdom-count"><strong id="libraryCount">140</strong> missions ménagères fiables disponibles.</p></div></article>
             <article class="card setting-card">
               <div><strong>🌙 Heure du rituel</strong><p>Rappel local lorsque l'application est ouverte.</p></div>
               <input type="time" id="ritualTime" value="21:30" />
@@ -222,14 +223,18 @@
     </form>
   </dialog>
 
-  <dialog id="rewardDialog">
-    <div class="reward-box">
-      <div class="reward-rays">✦</div>
-      <p class="eyebrow">Mission accomplie</p>
-      <h2 id="rewardTitle">Belle avancée.</h2>
-      <div class="reward-xp" id="rewardXp">+25 XP</div>
-      <p id="rewardText">Tu viens de rendre le foyer un peu plus léger.</p>
-      <button class="action primary full" id="closeReward">Continuer la légende</button>
+  <dialog id="rewardDialog" class="victory-dialog">
+    <div class="reward-box victory-box">
+      <div class="victory-bg" aria-hidden="true"></div><div class="victory-burst" aria-hidden="true"></div>
+      <div class="victory-kicker">⚡ MISSION ACCOMPLIE !</div>
+      <p class="victory-mission" id="victoryMission">Le foyer avance</p>
+      <div class="victory-grid">
+        <div class="victory-rank-panel"><small>RANG OBTENU</small><strong id="victoryRank">S</strong><span>VICTOIRE</span></div>
+        <div class="victory-gain-panel"><small>GAIN</small><div class="reward-xp" id="rewardXp">+25 XP</div><div class="victory-combo">🔥 COMBO <strong id="victoryCombo">1 jour</strong></div></div>
+      </div>
+      <div class="victory-loot"><span class="loot-icon" id="victoryRewardIcon">✨</span><div><small>RÉCOMPENSE VISUELLE</small><strong id="victoryRewardName">Éclat du Gardien</strong></div></div>
+      <h2 id="rewardTitle">Belle avancée.</h2><p id="rewardText">Tu viens de rendre le foyer un peu plus léger.</p>
+      <button class="action victory-continue full" id="closeReward">CONTINUER L’AVENTURE !</button>
     </div>
   </dialog>
 

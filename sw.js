@@ -1,4 +1,4 @@
-const CACHE='chroniques-foyer-v6-3-shonen';
+const CACHE='chroniques-v6.4-shonen-home';
 const ASSETS=['./','./index.html','./style.css','./app.js','./icon.svg','./icon-192.png','./icon-512.png','./manifest.webmanifest','./household-library.js','./household-task-library.v1.json','./assets/hero-guardian.webp','./assets/ritual-moon.webp','./assets/campaign-forge.webp','./assets/progression-banner.webp'];
 self.addEventListener('install',e=>e.waitUntil(caches.open(CACHE).then(c=>c.addAll(ASSETS)).then(()=>self.skipWaiting())));
 self.addEventListener('activate',e=>e.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(k=>k!==CACHE).map(k=>caches.delete(k)))).then(()=>self.clients.claim())));

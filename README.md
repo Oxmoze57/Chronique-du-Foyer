@@ -1,3 +1,7 @@
+# Chroniques du Foyer — v6.4 Shōnen Home Edition
+
+140 missions adaptées à 8 zones du logement, écran de victoire shōnen, fonctionnement hors ligne conservé.
+
 # Chroniques du Foyer
 
 Application PWA personnelle, centrée sur le foyer et conçue pour transformer les tâches quotidiennes en missions motivantes.
