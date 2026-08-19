@@ -1,4 +1,4 @@
-# Chroniques du Foyer — v6.5 Mythic Shōnen Edition
+# Chroniques du Foyer — v6.6 Mythic Shōnen Edition
 
 Interface renforcée avec une direction shōnen mythologique originale, tout en conservant la logique et les données de la v6.4.
 
@@ -67,3 +67,7 @@ La version statique peut demander l'autorisation et effectuer des tests locaux. 
 ## Avant une mise à jour
 
 Toujours exporter les données depuis l'application avant de remplacer une version importante. Ne pas changer les identifiants permanents des tâches de la bibliothèque sans stratégie de migration.
+
+
+## v6.6 — Serment du Royaume
+Le sélecteur de Serment peut désormais ajouter jusqu’à trois idées ménagères sûres issues de la bibliothèque du foyer. Les suggestions respectent le risque maximal, la durée, la difficulté, le logement configuré et évitent de dupliquer une mission ménagère déjà active.

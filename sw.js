@@ -1,4 +1,4 @@
-const CACHE='chroniques-v6.5-mythic-shonen';
+const CACHE='chroniques-v6.6-oath-household';
 const ASSETS=['./','./index.html','./style.css','./app.js','./icon.svg','./icon-192.png','./icon-512.png','./manifest.webmanifest','./household-library.js','./household-task-library.v1.json','./assets/hero-guardian.webp','./assets/ritual-moon.webp','./assets/campaign-forge.webp','./assets/progression-banner.webp',
   './assets/sigil-pattern.svg',
   './assets/rune-divider.svg'
