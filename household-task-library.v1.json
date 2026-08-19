@@ -1,0 +1,2302 @@
+{
+  "schema": "chroniques.household-task-library",
+  "schemaVersion": 1,
+  "libraryVersion": "2026.08.1",
+  "locale": "fr-FR",
+  "generatedFor": "Chroniques du Foyer v6",
+  "riskPolicy": {
+    "0": {
+      "label": "négligeable",
+      "randomEligible": true,
+      "requiresConfirmation": false
+    },
+    "1": {
+      "label": "faible",
+      "randomEligible": true,
+      "requiresConfirmation": false
+    },
+    "2": {
+      "label": "modéré",
+      "randomEligible": false,
+      "requiresConfirmation": true
+    },
+    "3": {
+      "label": "élevé",
+      "randomEligible": false,
+      "requiresConfirmation": true
+    },
+    "4": {
+      "label": "professionnel",
+      "randomEligible": false,
+      "requiresConfirmation": true
+    }
+  },
+  "selectionDefaults": {
+    "maxRandomRisk": 1,
+    "maxSuggestionsPerSession": 3,
+    "avoidRecentlyCompleted": true,
+    "respectMinimumGap": true,
+    "preferOverdue": true,
+    "preferShortWhenLowEnergy": true,
+    "neverSuggestExcluded": true,
+    "fallbackTaskIds": [
+      "rng-5-items",
+      "rng-15-zone",
+      "sup-tomorrow-ready"
+    ]
+  },
+  "difficultyScale": {
+    "1": "très facile",
+    "2": "facile",
+    "3": "moyenne",
+    "4": "difficile",
+    "5": "expert / à ne pas automatiser"
+  },
+  "contextKeys": {
+    "requires": "Toutes les conditions requises doivent être présentes dans le profil du foyer.",
+    "excludeIf": "Si une condition d’exclusion est présente, la tâche n’est pas éligible."
+  },
+  "tasks": [
+    {
+      "id": "ent-kitchen-worktop",
+      "version": 1,
+      "title": "Nettoyer le plan de travail",
+      "category": "Entretien",
+      "subcategory": "Cuisine",
+      "frequency": {
+        "type": "daily",
+        "recommendedIntervalDays": 1,
+        "minimumGapDays": 1
+      },
+      "durationMinutes": 10,
+      "difficulty": 1,
+      "risk": {
+        "level": 0,
+        "label": "négligeable"
+      },
+      "autoSuggest": true,
+      "why": "Garder une surface propre et disponible.",
+      "conditions": {
+        "requires": [
+          "room:kitchen"
+        ],
+        "excludeIf": [
+          "surface:delicate-unknown"
+        ]
+      },
+      "tags": [
+        "rapide",
+        "surface"
+      ],
+      "instructions": []
+    },
+    {
+      "id": "ent-sink",
+      "version": 1,
+      "title": "Nettoyer l’évier et la robinetterie",
+      "category": "Entretien",
+      "subcategory": "Cuisine",
+      "frequency": {
+        "type": "weekly",
+        "recommendedIntervalDays": 3,
+        "minimumGapDays": 1
+      },
+      "durationMinutes": 10,
+      "difficulty": 1,
+      "risk": {
+        "level": 0,
+        "label": "négligeable"
+      },
+      "autoSuggest": true,
+      "why": "Éviter l’accumulation de traces et résidus.",
+      "conditions": {
+        "requires": [
+          "room:kitchen"
+        ],
+        "excludeIf": []
+      },
+      "tags": [
+        "eau",
+        "rapide"
+      ],
+      "instructions": []
+    },
+    {
+      "id": "ent-stovetop",
+      "version": 1,
+      "title": "Nettoyer la plaque de cuisson",
+      "category": "Entretien",
+      "subcategory": "Cuisine",
+      "frequency": {
+        "type": "weekly",
+        "recommendedIntervalDays": 3,
+        "minimumGapDays": 1
+      },
+      "durationMinutes": 15,
+      "difficulty": 1,
+      "risk": {
+        "level": 1,
+        "label": "faible"
+      },
+      "autoSuggest": true,
+      "why": "Limiter les graisses incrustées.",
+      "conditions": {
+        "requires": [
+          "appliance:stovetop"
+        ],
+        "excludeIf": [
+          "appliance:hot"
+        ]
+      },
+      "tags": [
+        "graisse"
+      ],
+      "instructions": [
+        "Laisser refroidir complètement avant nettoyage.",
+        "Utiliser un produit compatible avec le matériau."
+      ]
+    },
+    {
+      "id": "ent-microwave",
+      "version": 1,
+      "title": "Nettoyer l’intérieur du micro-ondes",
+      "category": "Entretien",
+      "subcategory": "Cuisine",
+      "frequency": {
+        "type": "monthly",
+        "recommendedIntervalDays": 14,
+        "minimumGapDays": 7
+      },
+      "durationMinutes": 15,
+      "difficulty": 1,
+      "risk": {
+        "level": 1,
+        "label": "faible"
+      },
+      "autoSuggest": true,
+      "why": "Retirer projections et odeurs.",
+      "conditions": {
+        "requires": [
+          "appliance:microwave"
+        ],
+        "excludeIf": [
+          "appliance:running"
+        ]
+      },
+      "tags": [
+        "électroménager"
+      ],
+      "instructions": []
+    },
+    {
+      "id": "ent-fridge-shelf",
+      "version": 1,
+      "title": "Nettoyer une étagère du réfrigérateur",
+      "category": "Entretien",
+      "subcategory": "Cuisine",
+      "frequency": {
+        "type": "monthly",
+        "recommendedIntervalDays": 14,
+        "minimumGapDays": 7
+      },
+      "durationMinutes": 15,
+      "difficulty": 1,
+      "risk": {
+        "level": 0,
+        "label": "négligeable"
+      },
+      "autoSuggest": true,
+      "why": "Entretenir le réfrigérateur sans transformer la tâche en grand chantier.",
+      "conditions": {
+        "requires": [
+          "appliance:fridge"
+        ],
+        "excludeIf": []
+      },
+      "tags": [
+        "zone-unique",
+        "froid"
+      ],
+      "instructions": []
+    },
+    {
+      "id": "ent-fridge-full",
+      "version": 1,
+      "title": "Nettoyer l’intérieur du réfrigérateur",
+      "category": "Entretien",
+      "subcategory": "Cuisine",
+      "frequency": {
+        "type": "monthly",
+        "recommendedIntervalDays": 30,
+        "minimumGapDays": 15
+      },
+      "durationMinutes": 35,
+      "difficulty": 2,
+      "risk": {
+        "level": 1,
+        "label": "faible"
+      },
+      "autoSuggest": true,
+      "why": "Faire un entretien plus complet du stockage alimentaire.",
+      "conditions": {
+        "requires": [
+          "appliance:fridge"
+        ],
+        "excludeIf": []
+      },
+      "tags": [
+        "froid",
+        "grand-nettoyage"
+      ],
+      "instructions": []
+    },
+    {
+      "id": "ent-dishwasher-filter",
+      "version": 1,
+      "title": "Nettoyer le filtre du lave-vaisselle",
+      "category": "Entretien",
+      "subcategory": "Cuisine",
+      "frequency": {
+        "type": "monthly",
+        "recommendedIntervalDays": 30,
+        "minimumGapDays": 15
+      },
+      "durationMinutes": 10,
+      "difficulty": 1,
+      "risk": {
+        "level": 1,
+        "label": "faible"
+      },
+      "autoSuggest": true,
+      "why": "Préserver l’efficacité du lavage.",
+      "conditions": {
+        "requires": [
+          "appliance:dishwasher"
+        ],
+        "excludeIf": [
+          "appliance:running"
+        ]
+      },
+      "tags": [
+        "filtre",
+        "électroménager"
+      ],
+      "instructions": [
+        "Consulter la notice si le filtre n’est pas facilement accessible."
+      ]
+    },
+    {
+      "id": "ent-oven-surface",
+      "version": 1,
+      "title": "Essuyer la porte et les surfaces extérieures du four",
+      "category": "Entretien",
+      "subcategory": "Cuisine",
+      "frequency": {
+        "type": "weekly",
+        "recommendedIntervalDays": 7,
+        "minimumGapDays": 3
+      },
+      "durationMinutes": 10,
+      "difficulty": 1,
+      "risk": {
+        "level": 1,
+        "label": "faible"
+      },
+      "autoSuggest": true,
+      "why": "Éviter l’accumulation de graisse.",
+      "conditions": {
+        "requires": [
+          "appliance:oven"
+        ],
+        "excludeIf": [
+          "appliance:hot"
+        ]
+      },
+      "tags": [
+        "graisse"
+      ],
+      "instructions": []
+    },
+    {
+      "id": "ent-oven-deep",
+      "version": 1,
+      "title": "Nettoyer l’intérieur du four",
+      "category": "Entretien",
+      "subcategory": "Cuisine",
+      "frequency": {
+        "type": "quarterly",
+        "recommendedIntervalDays": 90,
+        "minimumGapDays": 45
+      },
+      "durationMinutes": 45,
+      "difficulty": 3,
+      "risk": {
+        "level": 2,
+        "label": "modéré"
+      },
+      "autoSuggest": false,
+      "why": "Retirer les dépôts importants.",
+      "conditions": {
+        "requires": [
+          "appliance:oven"
+        ],
+        "excludeIf": [
+          "appliance:hot",
+          "user:low-energy"
+        ]
+      },
+      "tags": [
+        "grand-nettoyage"
+      ],
+      "instructions": [
+        "Suivre les consignes du fabricant.",
+        "Ne jamais mélanger des produits ménagers."
+      ]
+    },
+    {
+      "id": "ent-floor-vacuum",
+      "version": 1,
+      "title": "Passer l’aspirateur dans les zones principales",
+      "category": "Entretien",
+      "subcategory": "Sols",
+      "frequency": {
+        "type": "weekly",
+        "recommendedIntervalDays": 3,
+        "minimumGapDays": 1
+      },
+      "durationMinutes": 20,
+      "difficulty": 1,
+      "risk": {
+        "level": 0,
+        "label": "négligeable"
+      },
+      "autoSuggest": true,
+      "why": "Réduire poussières et saletés visibles.",
+      "conditions": {
+        "requires": [
+          "tool:vacuum"
+        ],
+        "excludeIf": []
+      },
+      "tags": [
+        "sol",
+        "rapide"
+      ],
+      "instructions": []
+    },
+    {
+      "id": "ent-floor-mop",
+      "version": 1,
+      "title": "Nettoyer les sols durs",
+      "category": "Entretien",
+      "subcategory": "Sols",
+      "frequency": {
+        "type": "weekly",
+        "recommendedIntervalDays": 7,
+        "minimumGapDays": 3
+      },
+      "durationMinutes": 25,
+      "difficulty": 2,
+      "risk": {
+        "level": 1,
+        "label": "faible"
+      },
+      "autoSuggest": true,
+      "why": "Entretenir les zones de passage.",
+      "conditions": {
+        "requires": [
+          "floor:hard"
+        ],
+        "excludeIf": [
+          "floor:product-unknown"
+        ]
+      },
+      "tags": [
+        "sol",
+        "eau"
+      ],
+      "instructions": []
+    },
+    {
+      "id": "ent-doormats",
+      "version": 1,
+      "title": "Secouer ou aspirer les paillassons",
+      "category": "Entretien",
+      "subcategory": "Entrée",
+      "frequency": {
+        "type": "monthly",
+        "recommendedIntervalDays": 14,
+        "minimumGapDays": 7
+      },
+      "durationMinutes": 10,
+      "difficulty": 1,
+      "risk": {
+        "level": 0,
+        "label": "négligeable"
+      },
+      "autoSuggest": true,
+      "why": "Limiter la saleté qui entre dans le foyer.",
+      "conditions": {
+        "requires": [
+          "item:doormat"
+        ],
+        "excludeIf": []
+      },
+      "tags": [
+        "entrée",
+        "rapide"
+      ],
+      "instructions": []
+    },
+    {
+      "id": "ent-dust-visible",
+      "version": 1,
+      "title": "Dépoussiérer les surfaces visibles d’une pièce",
+      "category": "Entretien",
+      "subcategory": "Poussière",
+      "frequency": {
+        "type": "weekly",
+        "recommendedIntervalDays": 7,
+        "minimumGapDays": 3
+      },
+      "durationMinutes": 15,
+      "difficulty": 1,
+      "risk": {
+        "level": 0,
+        "label": "négligeable"
+      },
+      "autoSuggest": true,
+      "why": "Entretenir sans chercher la perfection.",
+      "conditions": {
+        "requires": [],
+        "excludeIf": []
+      },
+      "tags": [
+        "zone-unique",
+        "poussière"
+      ],
+      "instructions": []
+    },
+    {
+      "id": "ent-switches",
+      "version": 1,
+      "title": "Essuyer poignées et interrupteurs",
+      "category": "Entretien",
+      "subcategory": "Points de contact",
+      "frequency": {
+        "type": "monthly",
+        "recommendedIntervalDays": 30,
+        "minimumGapDays": 15
+      },
+      "durationMinutes": 15,
+      "difficulty": 1,
+      "risk": {
+        "level": 1,
+        "label": "faible"
+      },
+      "autoSuggest": true,
+      "why": "Entretenir les points de contact souvent oubliés.",
+      "conditions": {
+        "requires": [],
+        "excludeIf": [
+          "electrical:damaged"
+        ]
+      },
+      "tags": [
+        "oublié",
+        "rapide"
+      ],
+      "instructions": [
+        "Utiliser un chiffon légèrement humide, jamais détrempé près des éléments électriques."
+      ]
+    },
+    {
+      "id": "ent-bath-sink",
+      "version": 1,
+      "title": "Nettoyer lavabo et miroir",
+      "category": "Entretien",
+      "subcategory": "Salle de bain",
+      "frequency": {
+        "type": "weekly",
+        "recommendedIntervalDays": 3,
+        "minimumGapDays": 1
+      },
+      "durationMinutes": 15,
+      "difficulty": 1,
+      "risk": {
+        "level": 0,
+        "label": "négligeable"
+      },
+      "autoSuggest": true,
+      "why": "Donner rapidement une impression de salle de bain nette.",
+      "conditions": {
+        "requires": [
+          "room:bathroom"
+        ],
+        "excludeIf": []
+      },
+      "tags": [
+        "rapide"
+      ],
+      "instructions": []
+    },
+    {
+      "id": "ent-toilet",
+      "version": 1,
+      "title": "Nettoyer les toilettes",
+      "category": "Entretien",
+      "subcategory": "Salle de bain",
+      "frequency": {
+        "type": "weekly",
+        "recommendedIntervalDays": 3,
+        "minimumGapDays": 1
+      },
+      "durationMinutes": 15,
+      "difficulty": 1,
+      "risk": {
+        "level": 1,
+        "label": "faible"
+      },
+      "autoSuggest": true,
+      "why": "Maintenir une hygiène régulière.",
+      "conditions": {
+        "requires": [
+          "fixture:toilet"
+        ],
+        "excludeIf": []
+      },
+      "tags": [
+        "sanitaire"
+      ],
+      "instructions": [
+        "Ne jamais mélanger eau de Javel et produits acides ou ammoniaqués."
+      ]
+    },
+    {
+      "id": "ent-shower",
+      "version": 1,
+      "title": "Nettoyer douche ou baignoire",
+      "category": "Entretien",
+      "subcategory": "Salle de bain",
+      "frequency": {
+        "type": "weekly",
+        "recommendedIntervalDays": 7,
+        "minimumGapDays": 3
+      },
+      "durationMinutes": 20,
+      "difficulty": 2,
+      "risk": {
+        "level": 1,
+        "label": "faible"
+      },
+      "autoSuggest": true,
+      "why": "Limiter savon et calcaire.",
+      "conditions": {
+        "requires": [
+          "fixture:shower-or-tub"
+        ],
+        "excludeIf": []
+      },
+      "tags": [
+        "calcaire"
+      ],
+      "instructions": []
+    },
+    {
+      "id": "ent-bath-drain",
+      "version": 1,
+      "title": "Retirer les cheveux visibles de la bonde",
+      "category": "Entretien",
+      "subcategory": "Salle de bain",
+      "frequency": {
+        "type": "weekly",
+        "recommendedIntervalDays": 7,
+        "minimumGapDays": 3
+      },
+      "durationMinutes": 5,
+      "difficulty": 1,
+      "risk": {
+        "level": 1,
+        "label": "faible"
+      },
+      "autoSuggest": true,
+      "why": "Prévenir les écoulements lents.",
+      "conditions": {
+        "requires": [
+          "fixture:drain"
+        ],
+        "excludeIf": [
+          "drain:chemical-product-present"
+        ]
+      },
+      "tags": [
+        "5-min",
+        "prévention"
+      ],
+      "instructions": []
+    },
+    {
+      "id": "ent-mirror-other",
+      "version": 1,
+      "title": "Nettoyer les miroirs",
+      "category": "Entretien",
+      "subcategory": "Vitres",
+      "frequency": {
+        "type": "monthly",
+        "recommendedIntervalDays": 14,
+        "minimumGapDays": 7
+      },
+      "durationMinutes": 10,
+      "difficulty": 1,
+      "risk": {
+        "level": 0,
+        "label": "négligeable"
+      },
+      "autoSuggest": true,
+      "why": "Supprimer traces et poussière.",
+      "conditions": {
+        "requires": [
+          "item:mirror"
+        ],
+        "excludeIf": []
+      },
+      "tags": [
+        "rapide"
+      ],
+      "instructions": []
+    },
+    {
+      "id": "ent-windows-inside",
+      "version": 1,
+      "title": "Nettoyer quelques vitres intérieures",
+      "category": "Entretien",
+      "subcategory": "Vitres",
+      "frequency": {
+        "type": "quarterly",
+        "recommendedIntervalDays": 60,
+        "minimumGapDays": 30
+      },
+      "durationMinutes": 30,
+      "difficulty": 2,
+      "risk": {
+        "level": 1,
+        "label": "faible"
+      },
+      "autoSuggest": true,
+      "why": "Améliorer luminosité et aspect général.",
+      "conditions": {
+        "requires": [
+          "item:window"
+        ],
+        "excludeIf": [
+          "window:unsafe-height"
+        ]
+      },
+      "tags": [
+        "vitres"
+      ],
+      "instructions": []
+    },
+    {
+      "id": "ent-bin",
+      "version": 1,
+      "title": "Nettoyer un bac à déchets",
+      "category": "Entretien",
+      "subcategory": "Déchets",
+      "frequency": {
+        "type": "monthly",
+        "recommendedIntervalDays": 30,
+        "minimumGapDays": 15
+      },
+      "durationMinutes": 15,
+      "difficulty": 2,
+      "risk": {
+        "level": 1,
+        "label": "faible"
+      },
+      "autoSuggest": true,
+      "why": "Limiter résidus et odeurs.",
+      "conditions": {
+        "requires": [
+          "item:waste-bin"
+        ],
+        "excludeIf": []
+      },
+      "tags": [
+        "déchets"
+      ],
+      "instructions": []
+    },
+    {
+      "id": "ent-pet-area",
+      "version": 1,
+      "title": "Nettoyer la zone de l’animal",
+      "category": "Entretien",
+      "subcategory": "Animaux",
+      "frequency": {
+        "type": "weekly",
+        "recommendedIntervalDays": 7,
+        "minimumGapDays": 3
+      },
+      "durationMinutes": 15,
+      "difficulty": 2,
+      "risk": {
+        "level": 1,
+        "label": "faible"
+      },
+      "autoSuggest": true,
+      "why": "Entretenir l’espace de vie de l’animal.",
+      "conditions": {
+        "requires": [
+          "household:pets"
+        ],
+        "excludeIf": [
+          "user:allergy-severe"
+        ]
+      },
+      "tags": [
+        "animal"
+      ],
+      "instructions": []
+    },
+    {
+      "id": "ent-vent-covers",
+      "version": 1,
+      "title": "Dépoussiérer les grilles d’aération accessibles",
+      "category": "Entretien",
+      "subcategory": "Air",
+      "frequency": {
+        "type": "quarterly",
+        "recommendedIntervalDays": 90,
+        "minimumGapDays": 45
+      },
+      "durationMinutes": 15,
+      "difficulty": 2,
+      "risk": {
+        "level": 1,
+        "label": "faible"
+      },
+      "autoSuggest": true,
+      "why": "Limiter la poussière visible sur les grilles.",
+      "conditions": {
+        "requires": [
+          "fixture:vent-accessible"
+        ],
+        "excludeIf": [
+          "vent:requires-disassembly"
+        ]
+      },
+      "tags": [
+        "air",
+        "poussière"
+      ],
+      "instructions": []
+    },
+    {
+      "id": "ent-smoke-test",
+      "version": 1,
+      "title": "Tester le bouton d’un détecteur de fumée",
+      "category": "Entretien",
+      "subcategory": "Sécurité",
+      "frequency": {
+        "type": "monthly",
+        "recommendedIntervalDays": 30,
+        "minimumGapDays": 15
+      },
+      "durationMinutes": 5,
+      "difficulty": 1,
+      "risk": {
+        "level": 1,
+        "label": "faible"
+      },
+      "autoSuggest": true,
+      "why": "Vérifier que l’alarme réagit au test manuel.",
+      "conditions": {
+        "requires": [
+          "device:smoke-alarm"
+        ],
+        "excludeIf": [
+          "device:alarm-damaged"
+        ]
+      },
+      "tags": [
+        "sécurité",
+        "5-min"
+      ],
+      "instructions": [
+        "Utiliser uniquement le bouton de test selon la notice."
+      ]
+    },
+    {
+      "id": "ent-smoke-battery",
+      "version": 1,
+      "title": "Remplacer la pile d’un détecteur selon l’alerte ou la notice",
+      "category": "Entretien",
+      "subcategory": "Sécurité",
+      "frequency": {
+        "type": "condition",
+        "recommendedIntervalDays": 0,
+        "minimumGapDays": 1
+      },
+      "durationMinutes": 10,
+      "difficulty": 2,
+      "risk": {
+        "level": 2,
+        "label": "modéré"
+      },
+      "autoSuggest": false,
+      "why": "Maintenir le dispositif opérationnel.",
+      "conditions": {
+        "requires": [
+          "device:smoke-alarm",
+          "condition:battery-low"
+        ],
+        "excludeIf": [
+          "device:hardwired-unknown",
+          "access:unsafe-height"
+        ]
+      },
+      "tags": [
+        "sécurité"
+      ],
+      "instructions": []
+    },
+    {
+      "id": "rng-5-items",
+      "version": 1,
+      "title": "Ranger 5 objets qui ne sont pas à leur place",
+      "category": "Rangement",
+      "subcategory": "Micro-mission",
+      "frequency": {
+        "type": "daily",
+        "recommendedIntervalDays": 1,
+        "minimumGapDays": 1
+      },
+      "durationMinutes": 5,
+      "difficulty": 1,
+      "risk": {
+        "level": 0,
+        "label": "négligeable"
+      },
+      "autoSuggest": true,
+      "why": "Créer un petit élan sans réfléchir.",
+      "conditions": {
+        "requires": [],
+        "excludeIf": []
+      },
+      "tags": [
+        "5-min",
+        "reprise"
+      ],
+      "instructions": []
+    },
+    {
+      "id": "rng-15-zone",
+      "version": 1,
+      "title": "Ranger une seule zone pendant 15 minutes",
+      "category": "Rangement",
+      "subcategory": "Zone",
+      "frequency": {
+        "type": "daily",
+        "recommendedIntervalDays": 1,
+        "minimumGapDays": 1
+      },
+      "durationMinutes": 15,
+      "difficulty": 1,
+      "risk": {
+        "level": 0,
+        "label": "négligeable"
+      },
+      "autoSuggest": true,
+      "why": "Avancer sans vouloir finir toute la pièce.",
+      "conditions": {
+        "requires": [],
+        "excludeIf": []
+      },
+      "tags": [
+        "anti-procrastination",
+        "zone-unique"
+      ],
+      "instructions": []
+    },
+    {
+      "id": "rng-entry",
+      "version": 1,
+      "title": "Remettre l’entrée en ordre",
+      "category": "Rangement",
+      "subcategory": "Entrée",
+      "frequency": {
+        "type": "weekly",
+        "recommendedIntervalDays": 3,
+        "minimumGapDays": 1
+      },
+      "durationMinutes": 10,
+      "difficulty": 1,
+      "risk": {
+        "level": 0,
+        "label": "négligeable"
+      },
+      "autoSuggest": true,
+      "why": "Faciliter les départs et retours.",
+      "conditions": {
+        "requires": [
+          "room:entry"
+        ],
+        "excludeIf": []
+      },
+      "tags": [
+        "rapide"
+      ],
+      "instructions": []
+    },
+    {
+      "id": "rng-kitchen-counter",
+      "version": 1,
+      "title": "Libérer une partie du plan de travail",
+      "category": "Rangement",
+      "subcategory": "Cuisine",
+      "frequency": {
+        "type": "weekly",
+        "recommendedIntervalDays": 3,
+        "minimumGapDays": 1
+      },
+      "durationMinutes": 10,
+      "difficulty": 1,
+      "risk": {
+        "level": 0,
+        "label": "négligeable"
+      },
+      "autoSuggest": true,
+      "why": "Rendre la cuisine immédiatement plus fonctionnelle.",
+      "conditions": {
+        "requires": [
+          "room:kitchen"
+        ],
+        "excludeIf": []
+      },
+      "tags": [
+        "rapide"
+      ],
+      "instructions": []
+    },
+    {
+      "id": "rng-table",
+      "version": 1,
+      "title": "Débarrasser complètement une table",
+      "category": "Rangement",
+      "subcategory": "Pièce de vie",
+      "frequency": {
+        "type": "weekly",
+        "recommendedIntervalDays": 3,
+        "minimumGapDays": 1
+      },
+      "durationMinutes": 10,
+      "difficulty": 1,
+      "risk": {
+        "level": 0,
+        "label": "négligeable"
+      },
+      "autoSuggest": true,
+      "why": "Récupérer une surface utile.",
+      "conditions": {
+        "requires": [
+          "item:table"
+        ],
+        "excludeIf": []
+      },
+      "tags": [
+        "surface"
+      ],
+      "instructions": []
+    },
+    {
+      "id": "rng-sofa-area",
+      "version": 1,
+      "title": "Ranger le coin canapé",
+      "category": "Rangement",
+      "subcategory": "Pièce de vie",
+      "frequency": {
+        "type": "weekly",
+        "recommendedIntervalDays": 7,
+        "minimumGapDays": 3
+      },
+      "durationMinutes": 10,
+      "difficulty": 1,
+      "risk": {
+        "level": 0,
+        "label": "négligeable"
+      },
+      "autoSuggest": true,
+      "why": "Créer une zone de repos agréable.",
+      "conditions": {
+        "requires": [
+          "item:sofa"
+        ],
+        "excludeIf": []
+      },
+      "tags": [
+        "rapide"
+      ],
+      "instructions": []
+    },
+    {
+      "id": "rng-bedroom-chair",
+      "version": 1,
+      "title": "Vider la chaise ou zone où les vêtements s’accumulent",
+      "category": "Rangement",
+      "subcategory": "Chambre",
+      "frequency": {
+        "type": "weekly",
+        "recommendedIntervalDays": 7,
+        "minimumGapDays": 3
+      },
+      "durationMinutes": 15,
+      "difficulty": 1,
+      "risk": {
+        "level": 0,
+        "label": "négligeable"
+      },
+      "autoSuggest": true,
+      "why": "Empêcher une petite pile de devenir permanente.",
+      "conditions": {
+        "requires": [
+          "room:bedroom"
+        ],
+        "excludeIf": []
+      },
+      "tags": [
+        "linge"
+      ],
+      "instructions": []
+    },
+    {
+      "id": "rng-bath-products",
+      "version": 1,
+      "title": "Trier rapidement les produits visibles de salle de bain",
+      "category": "Rangement",
+      "subcategory": "Salle de bain",
+      "frequency": {
+        "type": "monthly",
+        "recommendedIntervalDays": 30,
+        "minimumGapDays": 15
+      },
+      "durationMinutes": 15,
+      "difficulty": 1,
+      "risk": {
+        "level": 0,
+        "label": "négligeable"
+      },
+      "autoSuggest": true,
+      "why": "Limiter l’encombrement quotidien.",
+      "conditions": {
+        "requires": [
+          "room:bathroom"
+        ],
+        "excludeIf": []
+      },
+      "tags": [
+        "tri"
+      ],
+      "instructions": []
+    },
+    {
+      "id": "rng-drawer",
+      "version": 1,
+      "title": "Ranger un seul tiroir",
+      "category": "Rangement",
+      "subcategory": "Micro-zone",
+      "frequency": {
+        "type": "monthly",
+        "recommendedIntervalDays": 14,
+        "minimumGapDays": 7
+      },
+      "durationMinutes": 15,
+      "difficulty": 1,
+      "risk": {
+        "level": 0,
+        "label": "négligeable"
+      },
+      "autoSuggest": true,
+      "why": "Améliorer le foyer par petites zones finissables.",
+      "conditions": {
+        "requires": [
+          "item:drawer"
+        ],
+        "excludeIf": []
+      },
+      "tags": [
+        "zone-unique"
+      ],
+      "instructions": []
+    },
+    {
+      "id": "rng-shelf",
+      "version": 1,
+      "title": "Ranger une seule étagère",
+      "category": "Rangement",
+      "subcategory": "Micro-zone",
+      "frequency": {
+        "type": "monthly",
+        "recommendedIntervalDays": 14,
+        "minimumGapDays": 7
+      },
+      "durationMinutes": 15,
+      "difficulty": 1,
+      "risk": {
+        "level": 0,
+        "label": "négligeable"
+      },
+      "autoSuggest": true,
+      "why": "Créer une victoire visible et limitée.",
+      "conditions": {
+        "requires": [
+          "item:shelf"
+        ],
+        "excludeIf": []
+      },
+      "tags": [
+        "zone-unique"
+      ],
+      "instructions": []
+    },
+    {
+      "id": "rng-paper-pile",
+      "version": 1,
+      "title": "Traiter une petite pile de papiers",
+      "category": "Rangement",
+      "subcategory": "Papiers",
+      "frequency": {
+        "type": "weekly",
+        "recommendedIntervalDays": 7,
+        "minimumGapDays": 3
+      },
+      "durationMinutes": 20,
+      "difficulty": 2,
+      "risk": {
+        "level": 0,
+        "label": "négligeable"
+      },
+      "autoSuggest": true,
+      "why": "Éviter que l’administratif devienne une masse indistincte.",
+      "conditions": {
+        "requires": [
+          "item:paper-pile"
+        ],
+        "excludeIf": []
+      },
+      "tags": [
+        "administratif"
+      ],
+      "instructions": []
+    },
+    {
+      "id": "rng-fridge-expired",
+      "version": 1,
+      "title": "Faire un tri rapide des aliments manifestement périmés ou à jeter",
+      "category": "Rangement",
+      "subcategory": "Cuisine",
+      "frequency": {
+        "type": "weekly",
+        "recommendedIntervalDays": 7,
+        "minimumGapDays": 3
+      },
+      "durationMinutes": 10,
+      "difficulty": 1,
+      "risk": {
+        "level": 0,
+        "label": "négligeable"
+      },
+      "autoSuggest": true,
+      "why": "Réduire le gaspillage et libérer de la place.",
+      "conditions": {
+        "requires": [
+          "appliance:fridge"
+        ],
+        "excludeIf": []
+      },
+      "tags": [
+        "froid",
+        "tri"
+      ],
+      "instructions": []
+    },
+    {
+      "id": "rng-freezer-list",
+      "version": 1,
+      "title": "Faire l’inventaire rapide d’un tiroir du congélateur",
+      "category": "Rangement",
+      "subcategory": "Cuisine",
+      "frequency": {
+        "type": "monthly",
+        "recommendedIntervalDays": 30,
+        "minimumGapDays": 15
+      },
+      "durationMinutes": 10,
+      "difficulty": 1,
+      "risk": {
+        "level": 0,
+        "label": "négligeable"
+      },
+      "autoSuggest": true,
+      "why": "Savoir ce qui est déjà disponible.",
+      "conditions": {
+        "requires": [
+          "appliance:freezer"
+        ],
+        "excludeIf": []
+      },
+      "tags": [
+        "inventaire"
+      ],
+      "instructions": []
+    },
+    {
+      "id": "rng-clothes-donate",
+      "version": 1,
+      "title": "Préparer un petit sac de vêtements à donner",
+      "category": "Rangement",
+      "subcategory": "Désencombrement",
+      "frequency": {
+        "type": "monthly",
+        "recommendedIntervalDays": 30,
+        "minimumGapDays": 15
+      },
+      "durationMinutes": 20,
+      "difficulty": 2,
+      "risk": {
+        "level": 0,
+        "label": "négligeable"
+      },
+      "autoSuggest": true,
+      "why": "Faire sortir progressivement ce qui n’est plus utilisé.",
+      "conditions": {
+        "requires": [
+          "household:clothes"
+        ],
+        "excludeIf": []
+      },
+      "tags": [
+        "désencombrement"
+      ],
+      "instructions": []
+    },
+    {
+      "id": "rng-storage-box",
+      "version": 1,
+      "title": "Trier une seule caisse de rangement",
+      "category": "Rangement",
+      "subcategory": "Stockage",
+      "frequency": {
+        "type": "quarterly",
+        "recommendedIntervalDays": 60,
+        "minimumGapDays": 30
+      },
+      "durationMinutes": 30,
+      "difficulty": 2,
+      "risk": {
+        "level": 0,
+        "label": "négligeable"
+      },
+      "autoSuggest": true,
+      "why": "Transformer cave, garage ou placard par petites campagnes.",
+      "conditions": {
+        "requires": [
+          "item:storage-box"
+        ],
+        "excludeIf": []
+      },
+      "tags": [
+        "désencombrement",
+        "campagne"
+      ],
+      "instructions": []
+    },
+    {
+      "id": "rng-cables",
+      "version": 1,
+      "title": "Ranger une petite zone de câbles et chargeurs",
+      "category": "Rangement",
+      "subcategory": "Technique",
+      "frequency": {
+        "type": "quarterly",
+        "recommendedIntervalDays": 90,
+        "minimumGapDays": 45
+      },
+      "durationMinutes": 20,
+      "difficulty": 2,
+      "risk": {
+        "level": 1,
+        "label": "faible"
+      },
+      "autoSuggest": true,
+      "why": "Réduire le désordre technique.",
+      "conditions": {
+        "requires": [],
+        "excludeIf": [
+          "electrical:damaged-cable"
+        ]
+      },
+      "tags": [
+        "câbles"
+      ],
+      "instructions": []
+    },
+    {
+      "id": "kit-meal-plan",
+      "version": 1,
+      "title": "Choisir le repas du prochain jour",
+      "category": "Cuisine",
+      "subcategory": "Planification",
+      "frequency": {
+        "type": "daily",
+        "recommendedIntervalDays": 1,
+        "minimumGapDays": 1
+      },
+      "durationMinutes": 5,
+      "difficulty": 1,
+      "risk": {
+        "level": 0,
+        "label": "négligeable"
+      },
+      "autoSuggest": true,
+      "why": "Éviter la décision de dernière minute.",
+      "conditions": {
+        "requires": [
+          "household:eats-at-home"
+        ],
+        "excludeIf": []
+      },
+      "tags": [
+        "5-min",
+        "planification"
+      ],
+      "instructions": []
+    },
+    {
+      "id": "kit-prep-breakfast",
+      "version": 1,
+      "title": "Préparer ce qui peut l’être pour le petit-déjeuner",
+      "category": "Cuisine",
+      "subcategory": "Préparation",
+      "frequency": {
+        "type": "daily",
+        "recommendedIntervalDays": 1,
+        "minimumGapDays": 1
+      },
+      "durationMinutes": 10,
+      "difficulty": 1,
+      "risk": {
+        "level": 0,
+        "label": "négligeable"
+      },
+      "autoSuggest": true,
+      "why": "Alléger le matin du foyer.",
+      "conditions": {
+        "requires": [
+          "household:breakfast"
+        ],
+        "excludeIf": []
+      },
+      "tags": [
+        "soutien"
+      ],
+      "instructions": []
+    },
+    {
+      "id": "kit-prep-veg",
+      "version": 1,
+      "title": "Préparer quelques légumes pour un prochain repas",
+      "category": "Cuisine",
+      "subcategory": "Préparation",
+      "frequency": {
+        "type": "weekly",
+        "recommendedIntervalDays": 3,
+        "minimumGapDays": 1
+      },
+      "durationMinutes": 15,
+      "difficulty": 1,
+      "risk": {
+        "level": 1,
+        "label": "faible"
+      },
+      "autoSuggest": true,
+      "why": "Réduire le travail au moment du repas.",
+      "conditions": {
+        "requires": [
+          "food:vegetables"
+        ],
+        "excludeIf": []
+      },
+      "tags": [
+        "préparation"
+      ],
+      "instructions": [
+        "Respecter les règles habituelles d’hygiène alimentaire et conserver au froid si nécessaire."
+      ]
+    },
+    {
+      "id": "kit-leftovers",
+      "version": 1,
+      "title": "Identifier les restes à consommer en priorité",
+      "category": "Cuisine",
+      "subcategory": "Anti-gaspillage",
+      "frequency": {
+        "type": "daily",
+        "recommendedIntervalDays": 1,
+        "minimumGapDays": 1
+      },
+      "durationMinutes": 5,
+      "difficulty": 1,
+      "risk": {
+        "level": 0,
+        "label": "négligeable"
+      },
+      "autoSuggest": true,
+      "why": "Utiliser ce qui est déjà disponible.",
+      "conditions": {
+        "requires": [
+          "appliance:fridge"
+        ],
+        "excludeIf": []
+      },
+      "tags": [
+        "5-min",
+        "anti-gaspillage"
+      ],
+      "instructions": []
+    },
+    {
+      "id": "sup-dishes",
+      "version": 1,
+      "title": "Vider ou remplir le lave-vaisselle",
+      "category": "Soutien",
+      "subcategory": "Cuisine",
+      "frequency": {
+        "type": "daily",
+        "recommendedIntervalDays": 1,
+        "minimumGapDays": 1
+      },
+      "durationMinutes": 10,
+      "difficulty": 1,
+      "risk": {
+        "level": 0,
+        "label": "négligeable"
+      },
+      "autoSuggest": true,
+      "why": "Soulager directement le fonctionnement du foyer.",
+      "conditions": {
+        "requires": [
+          "appliance:dishwasher"
+        ],
+        "excludeIf": []
+      },
+      "tags": [
+        "soutien",
+        "rapide"
+      ],
+      "instructions": []
+    },
+    {
+      "id": "sup-hand-dishes",
+      "version": 1,
+      "title": "Faire la vaisselle restante",
+      "category": "Soutien",
+      "subcategory": "Cuisine",
+      "frequency": {
+        "type": "daily",
+        "recommendedIntervalDays": 1,
+        "minimumGapDays": 1
+      },
+      "durationMinutes": 15,
+      "difficulty": 1,
+      "risk": {
+        "level": 0,
+        "label": "négligeable"
+      },
+      "autoSuggest": true,
+      "why": "Laisser une cuisine plus simple pour la suite.",
+      "conditions": {
+        "requires": [
+          "fixture:kitchen-sink"
+        ],
+        "excludeIf": []
+      },
+      "tags": [
+        "soutien"
+      ],
+      "instructions": []
+    },
+    {
+      "id": "sup-table",
+      "version": 1,
+      "title": "Mettre ou débarrasser la table",
+      "category": "Soutien",
+      "subcategory": "Repas",
+      "frequency": {
+        "type": "daily",
+        "recommendedIntervalDays": 1,
+        "minimumGapDays": 1
+      },
+      "durationMinutes": 10,
+      "difficulty": 1,
+      "risk": {
+        "level": 0,
+        "label": "négligeable"
+      },
+      "autoSuggest": true,
+      "why": "Prendre une part visible du travail collectif.",
+      "conditions": {
+        "requires": [
+          "household:shared-meal"
+        ],
+        "excludeIf": []
+      },
+      "tags": [
+        "soutien"
+      ],
+      "instructions": []
+    },
+    {
+      "id": "sup-laundry-start",
+      "version": 1,
+      "title": "Lancer une lessive adaptée",
+      "category": "Soutien",
+      "subcategory": "Linge",
+      "frequency": {
+        "type": "weekly",
+        "recommendedIntervalDays": 2,
+        "minimumGapDays": 1
+      },
+      "durationMinutes": 10,
+      "difficulty": 1,
+      "risk": {
+        "level": 1,
+        "label": "faible"
+      },
+      "autoSuggest": true,
+      "why": "Éviter l’accumulation du linge.",
+      "conditions": {
+        "requires": [
+          "appliance:washing-machine",
+          "household:laundry"
+        ],
+        "excludeIf": [
+          "laundry:care-label-unknown"
+        ]
+      },
+      "tags": [
+        "linge",
+        "soutien"
+      ],
+      "instructions": [
+        "Vérifier les étiquettes et séparer les textiles nécessitant un traitement particulier."
+      ]
+    },
+    {
+      "id": "sup-laundry-fold",
+      "version": 1,
+      "title": "Plier une panière de linge",
+      "category": "Soutien",
+      "subcategory": "Linge",
+      "frequency": {
+        "type": "weekly",
+        "recommendedIntervalDays": 2,
+        "minimumGapDays": 1
+      },
+      "durationMinutes": 20,
+      "difficulty": 2,
+      "risk": {
+        "level": 0,
+        "label": "négligeable"
+      },
+      "autoSuggest": true,
+      "why": "Transformer le linge propre en tâche réellement terminée.",
+      "conditions": {
+        "requires": [
+          "household:clean-laundry"
+        ],
+        "excludeIf": []
+      },
+      "tags": [
+        "linge",
+        "soutien"
+      ],
+      "instructions": []
+    },
+    {
+      "id": "sup-laundry-putaway",
+      "version": 1,
+      "title": "Ranger une panière de linge plié",
+      "category": "Soutien",
+      "subcategory": "Linge",
+      "frequency": {
+        "type": "weekly",
+        "recommendedIntervalDays": 2,
+        "minimumGapDays": 1
+      },
+      "durationMinutes": 15,
+      "difficulty": 1,
+      "risk": {
+        "level": 0,
+        "label": "négligeable"
+      },
+      "autoSuggest": true,
+      "why": "Éviter que le linge propre reste en attente.",
+      "conditions": {
+        "requires": [
+          "household:folded-laundry"
+        ],
+        "excludeIf": []
+      },
+      "tags": [
+        "linge",
+        "soutien"
+      ],
+      "instructions": []
+    },
+    {
+      "id": "sup-bed",
+      "version": 1,
+      "title": "Faire ou remettre le lit en ordre",
+      "category": "Soutien",
+      "subcategory": "Chambre",
+      "frequency": {
+        "type": "daily",
+        "recommendedIntervalDays": 1,
+        "minimumGapDays": 1
+      },
+      "durationMinutes": 5,
+      "difficulty": 1,
+      "risk": {
+        "level": 0,
+        "label": "négligeable"
+      },
+      "autoSuggest": true,
+      "why": "Créer rapidement un espace plus net.",
+      "conditions": {
+        "requires": [
+          "item:bed"
+        ],
+        "excludeIf": []
+      },
+      "tags": [
+        "5-min"
+      ],
+      "instructions": []
+    },
+    {
+      "id": "sup-tomorrow-ready",
+      "version": 1,
+      "title": "Préparer un objet important pour demain",
+      "category": "Soutien",
+      "subcategory": "Préparation",
+      "frequency": {
+        "type": "daily",
+        "recommendedIntervalDays": 1,
+        "minimumGapDays": 1
+      },
+      "durationMinutes": 5,
+      "difficulty": 1,
+      "risk": {
+        "level": 0,
+        "label": "négligeable"
+      },
+      "autoSuggest": true,
+      "why": "Soulager le lendemain avant qu’il commence.",
+      "conditions": {
+        "requires": [],
+        "excludeIf": []
+      },
+      "tags": [
+        "5-min",
+        "rituel-du-soir"
+      ],
+      "instructions": []
+    },
+    {
+      "id": "sup-check-family",
+      "version": 1,
+      "title": "Demander ce qui soulagerait le plus le foyer aujourd’hui",
+      "category": "Soutien",
+      "subcategory": "Coordination",
+      "frequency": {
+        "type": "weekly",
+        "recommendedIntervalDays": 3,
+        "minimumGapDays": 1
+      },
+      "durationMinutes": 5,
+      "difficulty": 1,
+      "risk": {
+        "level": 0,
+        "label": "négligeable"
+      },
+      "autoSuggest": true,
+      "why": "Éviter de deviner quand une priorité peut être exprimée simplement.",
+      "conditions": {
+        "requires": [
+          "household:shared"
+        ],
+        "excludeIf": []
+      },
+      "tags": [
+        "communication",
+        "5-min"
+      ],
+      "instructions": []
+    },
+    {
+      "id": "adm-mail",
+      "version": 1,
+      "title": "Ouvrir et classer le courrier récent",
+      "category": "Administratif",
+      "subcategory": "Courrier",
+      "frequency": {
+        "type": "weekly",
+        "recommendedIntervalDays": 7,
+        "minimumGapDays": 3
+      },
+      "durationMinutes": 15,
+      "difficulty": 1,
+      "risk": {
+        "level": 0,
+        "label": "négligeable"
+      },
+      "autoSuggest": true,
+      "why": "Éviter l’accumulation de papier.",
+      "conditions": {
+        "requires": [
+          "household:mail"
+        ],
+        "excludeIf": []
+      },
+      "tags": [
+        "papier"
+      ],
+      "instructions": []
+    },
+    {
+      "id": "adm-bills",
+      "version": 1,
+      "title": "Vérifier les échéances du foyer à venir",
+      "category": "Administratif",
+      "subcategory": "Budget",
+      "frequency": {
+        "type": "weekly",
+        "recommendedIntervalDays": 7,
+        "minimumGapDays": 3
+      },
+      "durationMinutes": 15,
+      "difficulty": 2,
+      "risk": {
+        "level": 0,
+        "label": "négligeable"
+      },
+      "autoSuggest": true,
+      "why": "Anticiper plutôt que subir les échéances.",
+      "conditions": {
+        "requires": [
+          "household:bills"
+        ],
+        "excludeIf": []
+      },
+      "tags": [
+        "budget"
+      ],
+      "instructions": []
+    },
+    {
+      "id": "adm-shopping-list",
+      "version": 1,
+      "title": "Mettre à jour la liste de courses",
+      "category": "Administratif",
+      "subcategory": "Courses",
+      "frequency": {
+        "type": "weekly",
+        "recommendedIntervalDays": 3,
+        "minimumGapDays": 1
+      },
+      "durationMinutes": 10,
+      "difficulty": 1,
+      "risk": {
+        "level": 0,
+        "label": "négligeable"
+      },
+      "autoSuggest": true,
+      "why": "Réduire les oublis et achats improvisés.",
+      "conditions": {
+        "requires": [
+          "household:groceries"
+        ],
+        "excludeIf": []
+      },
+      "tags": [
+        "courses"
+      ],
+      "instructions": []
+    },
+    {
+      "id": "adm-house-stock",
+      "version": 1,
+      "title": "Vérifier trois consommables essentiels",
+      "category": "Administratif",
+      "subcategory": "Stock",
+      "frequency": {
+        "type": "weekly",
+        "recommendedIntervalDays": 7,
+        "minimumGapDays": 3
+      },
+      "durationMinutes": 5,
+      "difficulty": 1,
+      "risk": {
+        "level": 0,
+        "label": "négligeable"
+      },
+      "autoSuggest": true,
+      "why": "Éviter les ruptures simples à anticiper.",
+      "conditions": {
+        "requires": [],
+        "excludeIf": []
+      },
+      "tags": [
+        "5-min",
+        "stock"
+      ],
+      "instructions": []
+    },
+    {
+      "id": "adm-appointment",
+      "version": 1,
+      "title": "Prendre un rendez-vous d’entretien du foyer déjà identifié",
+      "category": "Administratif",
+      "subcategory": "Maintenance",
+      "frequency": {
+        "type": "condition",
+        "recommendedIntervalDays": 0,
+        "minimumGapDays": 1
+      },
+      "durationMinutes": 10,
+      "difficulty": 2,
+      "risk": {
+        "level": 0,
+        "label": "négligeable"
+      },
+      "autoSuggest": true,
+      "why": "Transformer un problème connu en action planifiée.",
+      "conditions": {
+        "requires": [
+          "condition:maintenance-needed"
+        ],
+        "excludeIf": []
+      },
+      "tags": [
+        "maintenance"
+      ],
+      "instructions": []
+    },
+    {
+      "id": "adm-documents",
+      "version": 1,
+      "title": "Classer un document important du foyer",
+      "category": "Administratif",
+      "subcategory": "Documents",
+      "frequency": {
+        "type": "weekly",
+        "recommendedIntervalDays": 7,
+        "minimumGapDays": 3
+      },
+      "durationMinutes": 10,
+      "difficulty": 1,
+      "risk": {
+        "level": 0,
+        "label": "négligeable"
+      },
+      "autoSuggest": true,
+      "why": "Maintenir une trace accessible.",
+      "conditions": {
+        "requires": [
+          "household:documents"
+        ],
+        "excludeIf": []
+      },
+      "tags": [
+        "papier"
+      ],
+      "instructions": []
+    },
+    {
+      "id": "art-screw-check",
+      "version": 1,
+      "title": "Resserrer une poignée ou vis manifestement desserrée",
+      "category": "Artisanat",
+      "subcategory": "Petite réparation",
+      "frequency": {
+        "type": "monthly",
+        "recommendedIntervalDays": 30,
+        "minimumGapDays": 15
+      },
+      "durationMinutes": 10,
+      "difficulty": 2,
+      "risk": {
+        "level": 1,
+        "label": "faible"
+      },
+      "autoSuggest": true,
+      "why": "Traiter les petits défauts avant qu’ils empirent.",
+      "conditions": {
+        "requires": [
+          "tool:basic-screwdriver"
+        ],
+        "excludeIf": [
+          "electrical:involved",
+          "plumbing:involved",
+          "structure:load-bearing"
+        ]
+      },
+      "tags": [
+        "réparation",
+        "rapide"
+      ],
+      "instructions": []
+    },
+    {
+      "id": "art-door-lube",
+      "version": 1,
+      "title": "Lubrifier une charnière qui grince avec un produit adapté",
+      "category": "Artisanat",
+      "subcategory": "Petite réparation",
+      "frequency": {
+        "type": "quarterly",
+        "recommendedIntervalDays": 90,
+        "minimumGapDays": 45
+      },
+      "durationMinutes": 10,
+      "difficulty": 2,
+      "risk": {
+        "level": 1,
+        "label": "faible"
+      },
+      "autoSuggest": true,
+      "why": "Entretenir les petits mécanismes accessibles.",
+      "conditions": {
+        "requires": [
+          "item:hinge"
+        ],
+        "excludeIf": [
+          "surface:product-unknown"
+        ]
+      },
+      "tags": [
+        "réparation"
+      ],
+      "instructions": []
+    },
+    {
+      "id": "art-furniture-felt",
+      "version": 1,
+      "title": "Vérifier ou remplacer les patins sous un meuble",
+      "category": "Artisanat",
+      "subcategory": "Prévention",
+      "frequency": {
+        "type": "quarterly",
+        "recommendedIntervalDays": 90,
+        "minimumGapDays": 45
+      },
+      "durationMinutes": 15,
+      "difficulty": 2,
+      "risk": {
+        "level": 1,
+        "label": "faible"
+      },
+      "autoSuggest": true,
+      "why": "Protéger les sols et faciliter les déplacements.",
+      "conditions": {
+        "requires": [
+          "item:furniture"
+        ],
+        "excludeIf": [
+          "furniture:too-heavy"
+        ]
+      },
+      "tags": [
+        "prévention"
+      ],
+      "instructions": []
+    },
+    {
+      "id": "art-wall-touchup",
+      "version": 1,
+      "title": "Faire une petite retouche de peinture déjà identifiée",
+      "category": "Artisanat",
+      "subcategory": "Finition",
+      "frequency": {
+        "type": "semiannual",
+        "recommendedIntervalDays": 180,
+        "minimumGapDays": 90
+      },
+      "durationMinutes": 30,
+      "difficulty": 2,
+      "risk": {
+        "level": 1,
+        "label": "faible"
+      },
+      "autoSuggest": true,
+      "why": "Entretenir progressivement les finitions.",
+      "conditions": {
+        "requires": [
+          "material:matching-paint"
+        ],
+        "excludeIf": [
+          "wall:moisture",
+          "surface:unknown-coating"
+        ]
+      },
+      "tags": [
+        "peinture"
+      ],
+      "instructions": []
+    },
+    {
+      "id": "art-silicone-inspect",
+      "version": 1,
+      "title": "Inspecter visuellement les joints autour d’un point d’eau",
+      "category": "Artisanat",
+      "subcategory": "Inspection",
+      "frequency": {
+        "type": "quarterly",
+        "recommendedIntervalDays": 90,
+        "minimumGapDays": 45
+      },
+      "durationMinutes": 10,
+      "difficulty": 1,
+      "risk": {
+        "level": 0,
+        "label": "négligeable"
+      },
+      "autoSuggest": true,
+      "why": "Repérer tôt une dégradation visible.",
+      "conditions": {
+        "requires": [
+          "fixture:wet-area"
+        ],
+        "excludeIf": []
+      },
+      "tags": [
+        "inspection"
+      ],
+      "instructions": []
+    },
+    {
+      "id": "art-leak-inspect",
+      "version": 1,
+      "title": "Regarder sous les éviers pour détecter une humidité visible",
+      "category": "Artisanat",
+      "subcategory": "Inspection",
+      "frequency": {
+        "type": "monthly",
+        "recommendedIntervalDays": 30,
+        "minimumGapDays": 15
+      },
+      "durationMinutes": 5,
+      "difficulty": 1,
+      "risk": {
+        "level": 0,
+        "label": "négligeable"
+      },
+      "autoSuggest": true,
+      "why": "Repérer rapidement une fuite évidente.",
+      "conditions": {
+        "requires": [
+          "fixture:sink"
+        ],
+        "excludeIf": []
+      },
+      "tags": [
+        "inspection",
+        "5-min"
+      ],
+      "instructions": []
+    },
+    {
+      "id": "art-electrical-inspect",
+      "version": 1,
+      "title": "Inspecter visuellement les câbles accessibles pour repérer une détérioration",
+      "category": "Artisanat",
+      "subcategory": "Inspection",
+      "frequency": {
+        "type": "quarterly",
+        "recommendedIntervalDays": 90,
+        "minimumGapDays": 45
+      },
+      "durationMinutes": 10,
+      "difficulty": 1,
+      "risk": {
+        "level": 0,
+        "label": "négligeable"
+      },
+      "autoSuggest": true,
+      "why": "Repérer un câble à remplacer sans intervenir sur l’installation.",
+      "conditions": {
+        "requires": [],
+        "excludeIf": []
+      },
+      "tags": [
+        "inspection",
+        "sécurité"
+      ],
+      "instructions": []
+    },
+    {
+      "id": "art-electrical-repair",
+      "version": 1,
+      "title": "Réparer une prise, un interrupteur ou un circuit électrique",
+      "category": "Artisanat",
+      "subcategory": "Électricité",
+      "frequency": {
+        "type": "condition",
+        "recommendedIntervalDays": 0,
+        "minimumGapDays": 1
+      },
+      "durationMinutes": 30,
+      "difficulty": 5,
+      "risk": {
+        "level": 4,
+        "label": "professionnel"
+      },
+      "autoSuggest": false,
+      "why": "Intervention à réserver à une personne qualifiée selon le contexte.",
+      "conditions": {
+        "requires": [
+          "condition:electrical-fault"
+        ],
+        "excludeIf": []
+      },
+      "tags": [
+        "professionnel",
+        "sécurité"
+      ],
+      "instructions": []
+    },
+    {
+      "id": "art-gas",
+      "version": 1,
+      "title": "Intervenir sur une installation de gaz",
+      "category": "Artisanat",
+      "subcategory": "Gaz",
+      "frequency": {
+        "type": "condition",
+        "recommendedIntervalDays": 0,
+        "minimumGapDays": 1
+      },
+      "durationMinutes": 30,
+      "difficulty": 5,
+      "risk": {
+        "level": 4,
+        "label": "professionnel"
+      },
+      "autoSuggest": false,
+      "why": "Intervention à ne jamais proposer aléatoirement.",
+      "conditions": {
+        "requires": [
+          "condition:gas-system"
+        ],
+        "excludeIf": []
+      },
+      "tags": [
+        "professionnel",
+        "sécurité"
+      ],
+      "instructions": []
+    },
+    {
+      "id": "art-boiler",
+      "version": 1,
+      "title": "Démonter ou réparer une chaudière",
+      "category": "Artisanat",
+      "subcategory": "Chauffage",
+      "frequency": {
+        "type": "condition",
+        "recommendedIntervalDays": 0,
+        "minimumGapDays": 1
+      },
+      "durationMinutes": 60,
+      "difficulty": 5,
+      "risk": {
+        "level": 4,
+        "label": "professionnel"
+      },
+      "autoSuggest": false,
+      "why": "Entretien technique réservé au cadre prévu par le fabricant et aux professionnels compétents.",
+      "conditions": {
+        "requires": [
+          "appliance:boiler"
+        ],
+        "excludeIf": []
+      },
+      "tags": [
+        "professionnel"
+      ],
+      "instructions": []
+    },
+    {
+      "id": "art-roof",
+      "version": 1,
+      "title": "Monter sur le toit pour entretien ou réparation",
+      "category": "Artisanat",
+      "subcategory": "Hauteur",
+      "frequency": {
+        "type": "condition",
+        "recommendedIntervalDays": 0,
+        "minimumGapDays": 1
+      },
+      "durationMinutes": 60,
+      "difficulty": 5,
+      "risk": {
+        "level": 4,
+        "label": "professionnel"
+      },
+      "autoSuggest": false,
+      "why": "Risque de chute incompatible avec une mission aléatoire.",
+      "conditions": {
+        "requires": [
+          "condition:roof-work"
+        ],
+        "excludeIf": []
+      },
+      "tags": [
+        "professionnel",
+        "hauteur"
+      ],
+      "instructions": []
+    },
+    {
+      "id": "art-heavy-furniture",
+      "version": 1,
+      "title": "Déplacer seul un meuble très lourd",
+      "category": "Artisanat",
+      "subcategory": "Manutention",
+      "frequency": {
+        "type": "condition",
+        "recommendedIntervalDays": 0,
+        "minimumGapDays": 1
+      },
+      "durationMinutes": 30,
+      "difficulty": 4,
+      "risk": {
+        "level": 3,
+        "label": "élevé"
+      },
+      "autoSuggest": false,
+      "why": "Risque de blessure ou de dommage.",
+      "conditions": {
+        "requires": [
+          "item:heavy-furniture"
+        ],
+        "excludeIf": []
+      },
+      "tags": [
+        "manutention"
+      ],
+      "instructions": []
+    }
+  ]
+}

@@ -1,0 +1,4 @@
+Chroniques du Foyer
+Version: 6.2 GitHub
+Data schema: 6
+Household library schema: 1

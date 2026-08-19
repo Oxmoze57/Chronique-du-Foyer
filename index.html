@@ -1,0 +1,236 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#07101b" />
+  <meta name="description" content="Chroniques du Foyer — transforme l'entretien, le rangement, la cuisine et le bricolage en missions motivantes." />
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="icon" href="icon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="icon-192.png" />
+  <title>Chroniques du Foyer</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="celebration" class="celebration" aria-hidden="true"></div>
+  <div class="app-shell">
+    <header class="topbar">
+      <div class="brandline">
+        <img src="icon.svg" alt="" class="brand-icon" />
+        <div>
+          <p class="eyebrow">Chroniques du Foyer</p>
+          <h1 id="greeting">Bonsoir, Gardien</h1>
+        </div>
+      </div>
+      <button class="icon-btn" id="installBtn" hidden aria-label="Installer l'application">↓</button>
+    </header>
+
+    <main id="mainContent">
+      <section id="todayView" class="view active-view">
+        <section class="hero card glow-card">
+          <div class="hero-copy">
+            <span class="pill" id="rankPill">NOVICE</span>
+            <h2>Protège ce qui compte.</h2>
+            <p id="dailyQuote">Une petite action utile vaut mieux qu'une grande intention.</p>
+            <div class="xp-line">
+              <div class="xp-track"><span id="xpBar"></span></div>
+              <small><strong id="xpCurrent">0</strong> / <span id="xpNext">250</span> XP</small>
+            </div>
+          </div>
+          <div class="level-orb"><small>NIVEAU</small><strong id="level">1</strong><span id="rankMini">Novice</span></div>
+        </section>
+
+        <section class="oath-card card">
+          <div class="section-head compact">
+            <div>
+              <p class="eyebrow">🔥 Serment du jour</p>
+              <h2><span id="oathDone">0</span>/3 engagements tenus</h2>
+            </div>
+            <button class="text-link" id="editOathBtn">Choisir</button>
+          </div>
+          <div id="oathList" class="oath-list"></div>
+          <div class="oath-progress"><span id="oathProgress"></span></div>
+        </section>
+
+        <section class="mission-cta">
+          <button class="action legendary" id="oneMissionBtn"><span>⚔️</span><div><strong>DONNE-MOI UNE MISSION</strong><small>Je choisis. Tu agis.</small></div></button>
+          <button class="action rescue" id="rescueBtn"><span>⚡</span><div><strong>MODE 5 MINUTES</strong><small>Reprendre l'élan maintenant</small></div></button>
+          <button class="action" id="householdSuggestBtn"><span>🎲</span><div><strong>MISSION MÉNAGÈRE SURPRISE</strong><small>Sûre, courte et issue de la bibliothèque</small></div></button>
+        </section>
+
+        <section class="stats-grid">
+          <article class="mini-stat card"><span>🔥</span><div><strong id="streak">0</strong><small>jours d'élan</small></div></article>
+          <article class="mini-stat card"><span>✨</span><div><strong id="shards">0</strong><small>éclats gagnés</small></div></article>
+          <article class="mini-stat card"><span>🛡️</span><div><strong id="todayDone">0</strong><small>missions aujourd'hui</small></div></article>
+          <article class="mini-stat card"><span>⏱️</span><div><strong id="todayMinutes">0</strong><small>minutes utiles</small></div></article>
+        </section>
+
+        <section class="section-block">
+          <div class="section-head">
+            <div><p class="eyebrow">Aujourd'hui</p><h2>Tableau des missions</h2></div>
+            <button class="small-add" id="addTaskBtn" aria-label="Ajouter une mission">＋</button>
+          </div>
+          <div class="filter-row" id="pathFilters">
+            <button class="chip active" data-path="all">Toutes</button>
+            <button class="chip" data-path="Entretien">🧹 Entretien</button>
+            <button class="chip" data-path="Cuisine">🍲 Cuisine</button>
+            <button class="chip" data-path="Rangement">📦 Rangement</button>
+            <button class="chip" data-path="Soutien">❤️ Soutien</button>
+            <button class="chip" data-path="Artisanat">🔨 Bricolage</button>
+          </div>
+          <div id="taskList" class="task-list"></div>
+        </section>
+      </section>
+
+      <section id="ritualView" class="view">
+        <section class="ritual-hero card glow-purple">
+          <span class="moon">🌙</span>
+          <p class="eyebrow">Rituel du soir</p>
+          <h2>Prépare la route de demain</h2>
+          <p>Vide ta tête. Une mission par ligne. L'application les transforme en plan clair.</p>
+          <button class="action ritual full" id="openRitualBtn">Énoncer mes missions</button>
+        </section>
+        <section class="section-block">
+          <div class="section-head"><div><p class="eyebrow">Demain</p><h2>Parchemin des missions</h2></div><button class="small-add" id="addTomorrowBtn">＋</button></div>
+          <div id="tomorrowList" class="task-list"></div>
+        </section>
+        <section class="card tip-card"><span>🧠</span><div><strong>Règle du Gardien</strong><p>3 missions principales suffisent. Le reste est du bonus, pas une dette.</p></div></section>
+      </section>
+
+      <section id="projectsView" class="view">
+        <section class="section-block first-block">
+          <div class="section-head"><div><p class="eyebrow">Campagnes</p><h2>Grands projets du foyer</h2></div><button class="small-add" id="addProjectBtn">＋</button></div>
+          <p class="muted">Transforme les gros travaux en petites étapes gagnables.</p>
+          <div id="projectList" class="project-list"></div>
+        </section>
+      </section>
+
+      <section id="progressView" class="view">
+        <section class="profile-card card glow-card">
+          <div class="guardian-symbol">🔥</div>
+          <p class="eyebrow">Voie du Gardien</p>
+          <h2 id="profileRank">Novice</h2>
+          <p>Niveau <strong id="profileLevel">1</strong> · <strong id="profileXP">0</strong> XP</p>
+          <div class="xp-track large"><span id="profileXpBar"></span></div>
+        </section>
+        <section class="section-block">
+          <div class="section-head"><div><p class="eyebrow">Vertus</p><h2>Ton évolution</h2></div></div>
+          <div id="virtues" class="virtue-grid"></div>
+        </section>
+        <section class="section-block">
+          <div class="section-head"><div><p class="eyebrow">Trophées</p><h2>Badges</h2></div></div>
+          <div id="badges" class="badge-grid"></div>
+        </section>
+        <section class="card weekly-card">
+          <p class="eyebrow">Défi de la semaine</p>
+          <h2 id="weeklyTitle">7 gestes pour le foyer</h2>
+          <div class="weekly-line"><div class="xp-track"><span id="weeklyBar"></span></div><strong><span id="weeklyDone">0</span>/7</strong></div>
+          <p id="weeklyMessage">Chaque geste compte.</p>
+        </section>
+      </section>
+
+      <section id="settingsView" class="view">
+        <section class="section-block first-block">
+          <div class="section-head"><div><p class="eyebrow">Réglages</p><h2>Ton sanctuaire</h2></div></div>
+          <div class="settings-stack">
+            <article class="card setting-card">
+              <div><strong>🌙 Heure du rituel</strong><p>Rappel local lorsque l'application est ouverte.</p></div>
+              <input type="time" id="ritualTime" value="21:30" />
+            </article>
+            <article class="card setting-card"><div><strong>🔔 Notifications</strong><p>Autoriser et tester un rappel du Rituel.</p></div><button class="action small" id="notifyBtn">Tester</button></article>
+            <article class="card setting-card"><div><strong>💾 Sauvegarde</strong><p>Exporte tes données avant un changement de téléphone.</p></div><button class="action small" id="exportBtn">Exporter</button></article>
+            <article class="card setting-card"><div><strong>📥 Restaurer</strong><p>Réimporte une sauvegarde JSON.</p></div><label class="action small file-action">Importer<input type="file" id="importInput" accept="application/json" hidden /></label></article>
+            <article class="card setting-card danger-zone"><div><strong>Réinitialiser</strong><p>Efface toutes les données locales.</p></div><button class="action small" id="resetBtn">Effacer</button></article>
+          </div>
+        </section>
+      </section>
+    </main>
+
+    <nav class="bottom-nav" aria-label="Navigation principale">
+      <button class="nav-item active" data-view="todayView">🏠<span>Aujourd'hui</span></button>
+      <button class="nav-item" data-view="ritualView">🌙<span>Rituel</span></button>
+      <button class="nav-item" data-view="projectsView">🔨<span>Projets</span></button>
+      <button class="nav-item" data-view="progressView">🏆<span>Progression</span></button>
+      <button class="nav-item" data-view="settingsView">⚙️<span>Réglages</span></button>
+    </nav>
+  </div>
+
+  <dialog id="taskDialog">
+    <form id="taskForm" class="dialog-pad">
+      <div class="dialog-head"><div><p class="eyebrow">Nouvelle mission</p><h2>Que faut-il accomplir ?</h2></div><button type="button" class="icon-btn close-dialog">×</button></div>
+      <input type="hidden" name="day" id="taskDay" value="today" />
+      <label>Titre<input name="title" required placeholder="Ex. Ranger l'entrée" /></label>
+      <div class="grid-2">
+        <label>Voie<select name="path"><option>Entretien</option><option>Cuisine</option><option>Rangement</option><option>Soutien</option><option>Artisanat</option><option>Administratif</option></select></label>
+        <label>Durée<select name="duration"><option value="5">5 min</option><option value="10">10 min</option><option value="15" selected>15 min</option><option value="30">30 min</option><option value="45">45 min</option><option value="60">1 h</option><option value="90">1 h 30</option></select></label>
+      </div>
+      <div class="grid-2">
+        <label>Importance<select name="priority"><option value="must">Serment</option><option value="important" selected>Important</option><option value="bonus">Bonus</option></select></label>
+        <label>Nature<select name="type"><option value="mission">Mission</option><option value="routine">Routine quotidienne</option><option value="weekly">Routine hebdomadaire</option></select></label>
+      </div>
+      <label>Pourquoi ? <span class="optional">(motivation)</span><input name="why" placeholder="Ex. Soulager la maison / préparer le week-end" /></label>
+      <label>Notes<textarea name="notes" rows="3" placeholder="Détail utile, matériel, première étape…"></textarea></label>
+      <button class="action primary full" type="submit">Ajouter la mission</button>
+    </form>
+  </dialog>
+
+  <dialog id="ritualDialog">
+    <div class="dialog-pad">
+      <div class="dialog-head"><div><p class="eyebrow">🌙 Rituel du soir</p><h2>Vide ta tête</h2></div><button type="button" class="icon-btn" id="closeRitual">×</button></div>
+      <p class="muted">Une ligne = une idée. Exemple : « faire les courses », « 30 min sur l'escalier », « nettoyer salle de bain ».</p>
+      <textarea id="ritualInput" rows="9" placeholder="Préparer le repas\nLancer une machine\nRanger la cave 30 min\nPoncer 3 marches…"></textarea>
+      <div class="grid-2 ritual-options">
+        <label>Durée par défaut<select id="ritualDuration"><option value="10">10 min</option><option value="15" selected>15 min</option><option value="30">30 min</option><option value="45">45 min</option></select></label>
+        <label>Énergie prévue<select id="tomorrowEnergy"><option value="low">Basse</option><option value="normal" selected>Normale</option><option value="high">Haute</option></select></label>
+      </div>
+      <button class="action ritual full" id="generateTomorrow">✨ Forger le plan de demain</button>
+    </div>
+  </dialog>
+
+  <dialog id="oathDialog">
+    <div class="dialog-pad">
+      <div class="dialog-head"><div><p class="eyebrow">🔥 Serment</p><h2>Choisis jusqu'à 3 missions</h2></div><button class="icon-btn" id="closeOath">×</button></div>
+      <p class="muted">Ce sont les seules missions que tu te promets vraiment de tenir.</p>
+      <div id="oathPicker" class="oath-picker"></div>
+      <button class="action primary full" id="saveOath">Sceller mon Serment</button>
+    </div>
+  </dialog>
+
+  <dialog id="focusDialog">
+    <div class="focus-box">
+      <div class="focus-emblem">⚔️</div>
+      <p class="eyebrow">Mission en cours</p>
+      <h2 id="focusTitle">Mission</h2>
+      <p id="focusWhy" class="focus-why"></p>
+      <div class="focus-reward"><span id="focusMeta"></span></div>
+      <div class="timer-ring"><div class="timer" id="timer">15:00</div><small>Une mission. Rien d'autre.</small></div>
+      <div class="focus-actions"><button class="action primary" id="startTimer">Démarrer</button><button class="action success" id="doneFocus">Mission accomplie ✓</button></div>
+      <button class="text-btn" id="closeFocus">Reporter sans culpabiliser</button>
+    </div>
+  </dialog>
+
+  <dialog id="projectDialog">
+    <form id="projectForm" class="dialog-pad">
+      <div class="dialog-head"><div><p class="eyebrow">Nouvelle campagne</p><h2>Grand projet</h2></div><button type="button" class="icon-btn close-dialog">×</button></div>
+      <label>Nom du projet<input name="title" required placeholder="Ex. Refaire l'escalier" /></label>
+      <label>Objectif<input name="why" placeholder="Ex. Rendre l'entrée plus agréable" /></label>
+      <label>Étapes <span class="optional">(une par ligne)</span><textarea name="steps" rows="7" required placeholder="Acheter le matériel\nProtéger la zone\nPoncer 3 marches\nReboucher\nPeindre"></textarea></label>
+      <button class="action primary full" type="submit">Créer la campagne</button>
+    </form>
+  </dialog>
+
+  <dialog id="rewardDialog">
+    <div class="reward-box">
+      <div class="reward-rays">✦</div>
+      <p class="eyebrow">Mission accomplie</p>
+      <h2 id="rewardTitle">Belle avancée.</h2>
+      <div class="reward-xp" id="rewardXp">+25 XP</div>
+      <p id="rewardText">Tu viens de rendre le foyer un peu plus léger.</p>
+      <button class="action primary full" id="closeReward">Continuer la légende</button>
+    </div>
+  </dialog>
+
+  <script src="household-library.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
