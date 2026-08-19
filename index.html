@@ -5,18 +5,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <meta name="theme-color" content="#030812" />
   <meta name="description" content="Chroniques du Foyer — transforme l'entretien, le rangement, la cuisine et le bricolage en missions motivantes." />
-  <link rel="manifest" href="manifest.webmanifest" />
-  <link rel="icon" href="icon.svg" type="image/svg+xml" />
-  <link rel="apple-touch-icon" href="icon-192.png" />
+  <link rel="manifest" href="./manifest.webmanifest" />
+  <link rel="icon" href="./icon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="./icon-192.png" />
   <title>Chroniques du Foyer</title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="./style.css" />
 </head>
 <body>
   <div id="celebration" class="celebration" aria-hidden="true"></div>
   <div class="app-shell">
     <header class="topbar">
       <div class="brandline">
-        <img src="icon.svg" alt="" class="brand-icon" />
+        <img src="./icon.svg" alt="" class="brand-icon" />
         <div>
           <p class="eyebrow">Chroniques du Foyer</p>
           <h1 id="greeting">Bonsoir, Gardien</h1>
@@ -37,7 +37,7 @@
               <small><strong id="xpCurrent">0</strong> / <span id="xpNext">250</span> XP</small>
             </div>
           </div>
-          <div class="hero-guardian-stage"><img id="heroGuardianImage" src="assets/guardian-stage-1.webp" alt="Évolution du Gardien"><div class="level-orb"><small>NIVEAU</small><strong id="level">1</strong><span id="rankMini">Novice</span></div></div>
+          <div class="hero-guardian-stage"><img id="heroGuardianImage" src="./assets/guardian-stage-1.webp" alt="Évolution du Gardien"><div class="level-orb"><small>NIVEAU</small><strong id="level">1</strong><span id="rankMini">Novice</span></div></div>
         </section>
 
         <section class="arc-banner card"><div><p class="eyebrow">Arc actuel</p><h2>La Flamme du Foyer</h2><p>Entretiens ton sanctuaire, tiens ton serment et fais grandir la légende du Gardien.</p></div><span class="arc-mark">炎</span></section>
@@ -110,7 +110,7 @@
 
       <section id="progressView" class="view">
         <section class="profile-card card glow-card progression-visual">
-          <div class="guardian-evolution-current"><img id="guardianEvolutionImage" src="assets/guardian-stage-1.webp" alt="Gardien niveau 1"><div class="guardian-evolution-copy"><small>FORME ACTUELLE</small><strong id="guardianEvolutionName">Débutant</strong><span id="guardianEvolutionDesc">Des vêtements simples. La volonté avant l’armure.</span></div></div>
+          <div class="guardian-evolution-current"><img id="guardianEvolutionImage" src="./assets/guardian-stage-1.webp" alt="Gardien niveau 1"><div class="guardian-evolution-copy"><small>FORME ACTUELLE</small><strong id="guardianEvolutionName">Débutant</strong><span id="guardianEvolutionDesc">Des vêtements simples. La volonté avant l’armure.</span></div></div>
           <div class="guardian-symbol">🔥</div>
           <p class="eyebrow">Voie du Gardien</p>
           <h2 id="profileRank">Novice</h2>
@@ -121,13 +121,22 @@
           <div class="section-head"><div><p class="eyebrow">Évolution visuelle</p><h2>L’armure du Gardien</h2></div></div>
           <p class="muted guardian-path-intro">Ton apparence change avec ton niveau. Chaque palier matérialise les habitudes que tu as réellement construites.</p>
           <div class="guardian-stage-track" id="guardianStageTrack">
-            <article class="guardian-stage-card" data-min-level="1"><img src="assets/guardian-stage-1.webp" alt="Gardien niveau 1"><strong>Niv. 1</strong><small>Débutant</small></article>
-            <article class="guardian-stage-card" data-min-level="10"><img src="assets/guardian-stage-10.webp" alt="Gardien niveau 10"><strong>Niv. 10</strong><small>Vainqueur</small></article>
-            <article class="guardian-stage-card" data-min-level="20"><img src="assets/guardian-stage-20.webp" alt="Gardien niveau 20"><strong>Niv. 20</strong><small>Protecteur</small></article>
-            <article class="guardian-stage-card" data-min-level="30"><img src="assets/guardian-stage-30.webp" alt="Gardien niveau 30"><strong>Niv. 30</strong><small>Gardien</small></article>
-            <article class="guardian-stage-card" data-min-level="40"><img src="assets/guardian-stage-40.webp" alt="Gardien niveau 40"><strong>Niv. 40</strong><small>Champion</small></article>
-            <article class="guardian-stage-card" data-min-level="50"><img src="assets/guardian-stage-50.webp" alt="Gardien niveau 50"><strong>Niv. 50+</strong><small>Mythe</small></article>
+            <article class="guardian-stage-card" data-min-level="1"><img src="./assets/guardian-stage-1.webp" alt="Gardien niveau 1"><strong>Niv. 1</strong><small>L’Éveillé</small></article>
+            <article class="guardian-stage-card" data-min-level="10"><img src="./assets/guardian-stage-10.webp" alt="Gardien niveau 10"><strong>Niv. 10</strong><small>L’Apprenti</small></article>
+            <article class="guardian-stage-card" data-min-level="20"><img src="./assets/guardian-stage-20.webp" alt="Gardien niveau 20"><strong>Niv. 20</strong><small>Protecteur</small></article>
+            <article class="guardian-stage-card" data-min-level="30"><img src="./assets/guardian-stage-30.webp" alt="Gardien niveau 30"><strong>Niv. 30</strong><small>Gardien</small></article>
+            <article class="guardian-stage-card" data-min-level="40"><img src="./assets/guardian-stage-40.webp" alt="Gardien niveau 40"><strong>Niv. 40</strong><small>Champion</small></article>
+            <article class="guardian-stage-card" data-min-level="50"><img src="./assets/guardian-stage-50.webp" alt="Gardien niveau 50"><strong>Niv. 50</strong><small>Héros</small></article>
+            <article class="guardian-stage-card advanced-stage" data-min-level="60"><img src="./assets/guardian-stage-50.webp" alt="Gardien niveau 60"><strong>Niv. 60</strong><small>Bâtisseur</small></article>
+            <article class="guardian-stage-card advanced-stage" data-min-level="70"><img src="./assets/guardian-stage-50.webp" alt="Gardien niveau 70"><strong>Niv. 70</strong><small>Ascendant</small></article>
+            <article class="guardian-stage-card advanced-stage" data-min-level="80"><img src="./assets/guardian-stage-50.webp" alt="Gardien niveau 80"><strong>Niv. 80</strong><small>Légendaire</small></article>
+            <article class="guardian-stage-card advanced-stage" data-min-level="90"><img src="./assets/guardian-stage-50.webp" alt="Gardien niveau 90"><strong>Niv. 90</strong><small>Demi-Dieu</small></article>
+            <article class="guardian-stage-card advanced-stage eternal-stage" data-min-level="100"><img src="./assets/guardian-stage-50.webp" alt="Gardien niveau 100"><strong>Niv. 100</strong><small>Éternel</small></article>
           </div>
+        </section>
+        <section class="heritage-entry card">
+          <div><p class="eyebrow">🏛️ Mémoire du Gardien</p><h2>Salle des Héritages</h2><p>Revois chaque grande forme de ton ascension, les équipements obtenus et l’évolution de ton Royaume.</p></div>
+          <button class="action primary" id="openHeritageBtn">ENTRER DANS LA SALLE</button>
         </section>
         <section class="section-block">
           <div class="section-head"><div><p class="eyebrow">Vertus</p><h2>Ton évolution</h2></div></div>
@@ -253,7 +262,47 @@
     </div>
   </dialog>
 
-  <script src="household-library.js"></script>
-  <script src="app.js"></script>
+
+  <dialog id="ascensionDialog" class="ascension-dialog">
+    <div class="ascension-shell">
+      <div class="ascension-stars" aria-hidden="true"></div>
+      <div class="ascension-seal" aria-hidden="true">✦</div>
+      <p class="ascension-awakening">QUELQUE CHOSE S’ÉVEILLE…</p>
+      <p class="eyebrow">✦ ASCENSION ✦</p>
+      <div class="ascension-level-line"><span>NIVEAU</span><strong id="ascensionLevel">30</strong><span>ATTEINT</span></div>
+      <h2 id="ascensionName">Le Gardien</h2>
+      <p class="ascension-quote" id="ascensionQuote">Celui qui prend soin de son royaume devient digne de le protéger.</p>
+      <div class="ascension-compare">
+        <article class="ascension-form before"><small>AVANT</small><img id="ascensionBeforeImg" src="./assets/guardian-stage-20.webp" alt="Ancienne forme"><strong id="ascensionBeforeName">Niv. 29 · Protecteur</strong></article>
+        <div class="ascension-arrow">➜</div>
+        <article class="ascension-form after"><small>MAINTENANT</small><img id="ascensionAfterImg" src="./assets/guardian-stage-30.webp" alt="Nouvelle forme"><strong id="ascensionAfterName">Niv. 30 · Gardien</strong></article>
+      </div>
+      <div class="ascension-unlocks">
+        <article><span>🛡️</span><div><small>ÉQUIPEMENT OBTENU</small><strong id="ascensionGear">Armure du Gardien</strong></div></article>
+        <article><span>🏰</span><div><small>ROYAUME ÉVOLUÉ</small><strong id="ascensionDecor">Domaine fortifié</strong></div></article>
+      </div>
+      <div class="ascension-stats" id="ascensionStats"></div>
+      <div class="ascension-actions">
+        <button class="action primary full" id="ascensionContinue">⚔️ CONTINUER L’AVENTURE</button>
+        <button class="action full" id="ascensionHeritage">🏛️ VOIR DANS LA SALLE DES HÉRITAGES</button>
+        <button class="text-btn" id="ascensionAdmire">◉ Admirer ma nouvelle forme</button>
+      </div>
+    </div>
+  </dialog>
+
+  <dialog id="heritageDialog" class="heritage-dialog">
+    <div class="heritage-shell">
+      <div class="dialog-head"><div><p class="eyebrow">🏛️ Salle des Héritages</p><h2>La mémoire de ton ascension</h2></div><button type="button" class="icon-btn" id="closeHeritage">×</button></div>
+      <p class="muted">Fais défiler les paliers. Les formes futures restent scellées jusqu’à ce que tu les mérites.</p>
+      <div class="heritage-detail">
+        <div class="heritage-hero-wrap"><img id="heritageHero" src="./assets/guardian-stage-1.webp" alt="Forme du Gardien"><div class="heritage-level" id="heritageLevel">Niveau 1</div></div>
+        <div class="heritage-copy"><p class="eyebrow">FORME</p><h3 id="heritageTitle">L’Éveillé</h3><div class="heritage-info"><span>🛡️ Équipement</span><strong id="heritageGear"></strong></div><div class="heritage-info"><span>🏰 Décor</span><strong id="heritageDecor"></strong></div><div class="heritage-status" id="heritageLock"></div></div>
+      </div>
+      <div class="heritage-track" id="heritageStages"></div>
+    </div>
+  </dialog>
+
+  <script src="./household-library.js"></script>
+  <script src="./app.js"></script>
 </body>
 </html>

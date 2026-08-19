@@ -2,31 +2,31 @@
   "name": "Chroniques du Foyer",
   "short_name": "Chroniques",
   "description": "Une application de missions, routines et projets pour prendre soin du foyer avec motivation.",
-  "start_url": "./",
+  "start_url": "./index.html",
   "display": "standalone",
   "background_color": "#030812",
   "theme_color": "#030812",
   "lang": "fr",
   "icons": [
     {
-      "src": "icon-192.png",
+      "src": "./icon-192.png",
       "sizes": "192x192",
       "type": "image/png",
       "purpose": "any maskable"
     },
     {
-      "src": "icon-512.png",
+      "src": "./icon-512.png",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "any maskable"
     },
     {
-      "src": "icon.svg",
+      "src": "./icon.svg",
       "sizes": "any",
       "type": "image/svg+xml",
       "purpose": "any"
     }
   ],
-  "id": "./",
+  "id": "./index.html",
   "scope": "./"
 }

@@ -2,7 +2,7 @@
 window.HouseholdLibrary = (() => {
   let library = null;
 
-  async function load(url = './household-task-library.v1.json') {
+  async function load(url = new URL('./household-task-library.v1.json', document.baseURI).href) {
     if (library) return library;
     const response = await fetch(url, { cache: 'no-store' });
     if (!response.ok) throw new Error(`Bibliothèque indisponible (${response.status})`);
