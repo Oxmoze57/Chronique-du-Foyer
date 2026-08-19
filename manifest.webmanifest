@@ -4,8 +4,8 @@
   "description": "Une application de missions, routines et projets pour prendre soin du foyer avec motivation.",
   "start_url": "./",
   "display": "standalone",
-  "background_color": "#07101b",
-  "theme_color": "#07101b",
+  "background_color": "#030812",
+  "theme_color": "#030812",
   "lang": "fr",
   "icons": [
     {
